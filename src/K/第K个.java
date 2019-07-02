@@ -7,8 +7,8 @@ public class 第K个 {
      * @param args
      */
     public static void main(String[] args) {
-        int[] a = {1,-2,3,10,14,-1,16,3};
-        int ans = solve(a, 1);
+        int[] a = {10,-2,3,3,14,-1,16,1};
+        int ans = solve(a, 5);
         System.out.println("ans: " + ans);
     }
 
@@ -16,15 +16,17 @@ public class 第K个 {
         int l = 0;
         int r = a.length - 1;
         int index = 0;
-        while (index < k) {
+        while (l < r) {
             index = partiton(a, l, r);
             if (index < k) {
                 l = index + 1;
             } else if (index > k) {
                 r = index - 1;
+            }else {
+                break;
             }
         }
-        return a[index-1];
+        return a[k];
     }
 
     private static int partiton(int[] a, int l, int r) {
