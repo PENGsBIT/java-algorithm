@@ -8,11 +8,12 @@ public class 第K个 {
      */
     public static void main(String[] args) {
         int[] a = {10,-2,3,3,14,-1,16,1};
-        int ans = solve(a, 5);
+        int ans = solve(a, 1);
         System.out.println("ans: " + ans);
     }
 
     private static int solve(int[] a, int k) {
+        k=a.length-k;
         int l = 0;
         int r = a.length - 1;
         int index = 0;
