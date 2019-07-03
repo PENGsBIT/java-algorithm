@@ -27,11 +27,30 @@ class MyThread extends Thread {
         System.out.println(Thread.currentThread().getName());
     }
 }
+
+
 class MyRunnable implements Runnable {
     public void run() {
         System.out.println(Thread.currentThread().getName());
     }
 }
+
+class tpool{
+    public void  run(){
+        ThreadPoolExecutor threadPoolExecutor=new ThreadPoolExecutor(3,3,10,
+            TimeUnit.SECONDS,new SynchronousQueue<>(),new ThreadPoolExecutor.DiscardOldestPolicy());
+        try{
+            threadPoolExecutor.execute(()-> System.out.println(Thread.currentThread().getName()));
+        }finally {
+            threadPoolExecutor.shutdown();
+        }
+
+    }
+
+
+}
+
+
 class MyCallable implements Callable<String> {
     public String call() {
         //System.out.println(Thread.currentThread().getName());
