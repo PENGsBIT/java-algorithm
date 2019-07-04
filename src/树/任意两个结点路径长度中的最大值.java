@@ -1,4 +1,4 @@
-package tree;
+package 树;
 
 public class 任意两个结点路径长度中的最大值 {
     private int max;

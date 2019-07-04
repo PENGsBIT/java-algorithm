@@ -1,4 +1,4 @@
-package tree;
+package 树;
 
 public class 间隔遍历 {
     public int rob(TreeNode root) {

@@ -1,4 +1,4 @@
-package tree;
+package 树;
 
 public class 二叉树中的最大路径和 {
     private int ret = Integer.MIN_VALUE;

@@ -1,5 +1,5 @@
 package 链表;
-import tree.TreeNode;
+import 树.TreeNode;
 
 public class 有序链表转换二叉搜索树 {
     public TreeNode sortedListToBST(ListNode head) {

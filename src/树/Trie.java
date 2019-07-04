@@ -1,4 +1,4 @@
-package tree;
+package 树;
 
 class Trie {
     //    public Trie() {

@@ -1,4 +1,4 @@
-package tree;
+package 树;
 
 public class 二叉树的最近公共祖先 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package tree;
+package 树;
 
 public class 树展开为链表 {
     public static void main(String[] args) {
