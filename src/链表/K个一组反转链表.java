@@ -9,10 +9,12 @@ public class K个一组反转链表 {
         a.next.next.next.next= new ListNode(5);
         //ListNode res =reverseKGroup(a,3);
 
-       ListNode res =reverse(a,3);
-       // reverseKGroup1(a,3);
-        System.out.println(res);
+
+        System.out.println(reverse(a,3).toString());
+        //System.out.println(reverseKGroup1(a,3).toString());
+
     }
+    //以K个为一组反转单链表，最后不足K个节点的部分也反转
     public static ListNode reverse (ListNode head, int k) {
         ListNode current = head;
         ListNode next = null;
@@ -73,7 +75,7 @@ public class K个一组反转链表 {
         return head;
     }
 
-
+    //以K个为一组反转单链表，最后不足K个节点的部分不反转
     public static ListNode reverseKGroup1(ListNode head, int k) {
 
         ListNode curr = head;
