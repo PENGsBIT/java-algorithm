@@ -9,7 +9,8 @@ public class 寻找峰值 {
     public static int findPeakElement(int[] nums) {
         int left = 0, right = nums.length - 1;
         while (left < right) {
-            int mid = left + (right - left) / 2;
+            int mid = left +( right-left)/2;
+            //int mid = (left + right)>>>1;
             if (nums[mid] > nums[mid + 1]) right = mid;
             else left = mid+1;
         }
@@ -18,7 +19,7 @@ public class 寻找峰值 {
     public static int findVally(int[] nums){
         int l=0,r=nums.length;
         while (l<r){
-            int mid=(l+r)>>1;
+            int mid=(l+r)>>>1;
             if(nums[mid]>nums[mid+1]){
                 l=mid+1;
             }else {
