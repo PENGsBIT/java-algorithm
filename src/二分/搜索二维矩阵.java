@@ -1,3 +1,5 @@
+package 二分;
+
 public class 搜索二维矩阵 {
     public static void main(String[] args) {
         int[][] matrix={

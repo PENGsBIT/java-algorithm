@@ -37,7 +37,7 @@ public class 搜索旋转排序数组 {
         int high = toIndex - 1;
 
         while (low <= high) {
-            int mid = (low + high) >>> 1;
+            int mid = (low + high) >> 1;
             int midVal = a[mid];
 
             if (midVal < key)

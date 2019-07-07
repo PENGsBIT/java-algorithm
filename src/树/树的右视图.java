@@ -31,7 +31,7 @@ public class 树的右视图 {
 
     //递归
     public static List<Integer> rightSideView2(TreeNode root) {
-        List<Integer> res = new ArrayList<Integer>();
+        List<Integer> res = new ArrayList<>();
         dfs(root, res, 0);
         return res;
     }
