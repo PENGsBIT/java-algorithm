@@ -23,7 +23,7 @@ public class 快排 {
         //基准元素设为第一个
         int v = arr[l];
         //i指向基准的下一个元素，j指向最后一个元素
-        int i = l+1,j = r;
+                                                                                                           int i = l+1,j = r;
         while(true){
             while(i <= r && arr[i] < v) i++;
             while(j > l && arr[j] > v) j--;

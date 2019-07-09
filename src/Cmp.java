@@ -29,7 +29,7 @@ public class Cmp {
         arr.add(345);
         arr.add(12);
         arr.add(6);
-        Collections.sort(arr,cmp);
+        Collections.sort(arr,cmp2);
         System.out.println(arr);
 
 
