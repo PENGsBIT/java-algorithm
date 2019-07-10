@@ -1,6 +1,6 @@
 package 数组;
 
-public class findDuplicate {
+public class 查找重复 {
     public static void main(String[] args) {
         int a[] = {2,5,9,6,9,3,8,9,7,1};
         System.out.println(findDuplicate(a));

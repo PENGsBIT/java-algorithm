@@ -1,6 +1,6 @@
 package 排序;
 
-public class jishusort {
+public class 计数排序 {
 
     private static int[] countSort(int[] array, int k) {
         int[] C = new int[k + 1];//构造C数组
