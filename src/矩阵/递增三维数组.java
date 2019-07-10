@@ -1,4 +1,4 @@
-package 数组;
+package 矩阵;
 
 import java.util.LinkedList;
 import java.util.List;

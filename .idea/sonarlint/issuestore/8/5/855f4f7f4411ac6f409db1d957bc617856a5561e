@@ -1,0 +1,16 @@
+
+Qsquid:S1191"5Use classes from the Java API instead of Sun classes.(¤œĞ8¢¡Û¦½-
+esquid:UselessImportCheck"<Remove this unused import 'com.sun.istack.internal.NotNull'.(¤œĞ8¢¡Û¦½-
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(í¾óô8¢¡Û¦½-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(³ğ¸ûÿÿÿÿ8¢¡Û¦½-
+@squid:S1659"Declare "j" on a separate line.(‹«ĞÆÿÿÿÿÿ8¢¡Û¦½-
+@squid:S1659"Declare "x" on a separate line.(‹«ĞÆÿÿÿÿÿ8¢¡Û¦½-
+zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(£Ğ¥Àùÿÿÿÿ8¢¡Û¦½-
+Ysquid:S1197"8Move the array designator from the variable to the type.(¡şÏÖøÿÿÿÿ8¢¡Û¦½-
+osquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Õ«¾ùÿÿÿÿ8¢¡Û¦½-
+Dsquid:S1659"#Declare "count" on a separate line.(‹«ĞÆÿÿÿÿÿ8¢¡Û¦½-
+@squid:S1659"Declare "y" on a separate line.(‹«ĞÆÿÿÿÿÿ8¢¡Û¦½-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÁÑ­ß8¢¡Û¦½-
+ysquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ò®¿Åùÿÿÿÿ8¢¡Û¦½-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(µÇÒøÿÿÿÿ8¢¡Û¦½-

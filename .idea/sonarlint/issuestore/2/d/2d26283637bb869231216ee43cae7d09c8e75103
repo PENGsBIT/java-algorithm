@@ -1,0 +1,12 @@
+
+Ssquid:S1854"7Remove this useless assignment to local variable "lin".(÷‹¡8Êš‘ú¼-
+8squid:S1220""Move this file to a named package.8Êš‘ú¼-
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(Ç Ş—8Êš‘ú¼-
+Csquid:S1604"(Make this anonymous inner class a lambda(è­“?8Êš‘ú¼-
+usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(÷‹¡8Êš‘ú¼-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(†ñÀÌıÿÿÿÿ8Êš‘ú¼-
+Dsquid:S1481"(Remove this unused "lin" local variable.(÷‹¡8Êš‘ú¼-
+Rsquid:S1854"7Remove this useless assignment to local variable "cmp".(¼ Ñv8“ü’ú¼-
+Csquid:S1481"(Remove this unused "cmp" local variable.(¼ Ñv8“ü’ú¼-
+Csquid:S1604"(Make this anonymous inner class a lambda(¼ Ñv8Êš‘ú¼-

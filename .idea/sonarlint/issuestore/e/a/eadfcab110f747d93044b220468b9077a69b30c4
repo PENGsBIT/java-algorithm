@@ -1,0 +1,14 @@
+
+nsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(½â–¡
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¤ íÝþÿÿÿÿ
+msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(¡Ü´‘
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(‡êÃÙ
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(¿“•¿
+M
+squid:S106"9Replace this use of System.out or System.err by a logger.(Î›¨€
+nsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ì´»Ú
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ìŠç×üÿÿÿÿ
+psquid:S1488"[Immediately return this expression instead of assigning it to the temporary variable "res".(Ç‚åÜ
+ %squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÙØ¤Þýÿÿÿÿ

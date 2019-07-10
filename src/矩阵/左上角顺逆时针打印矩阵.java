@@ -1,4 +1,4 @@
-package 数组;
+package 矩阵;
 
 public class 左上角顺逆时针打印矩阵 {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package 数组;
+package 矩阵;
 
 public class Search2DMatrix {
     public static void main(String[] args) {
