@@ -25,25 +25,16 @@ public class 矩阵中的路径 {
      */
     private static boolean hasPath(char[][] matrix, char[] str) {
         // 参数检验
-        if (matrix == null || str == null)
-
-        {
+        if (matrix == null || str == null) {
             return false;
         }
 
         int rows = matrix.length;
-
         int cols = matrix[0].length;
 
         // 变量初始化，没有访问过为false 访问过为true
         boolean[][] visited = new boolean[rows][cols];
-        for (
-
-            int i = 0;
-
-            i < rows; i++)
-
-        {
+        for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
                 visited[i][j] = false;
             }
@@ -51,15 +42,9 @@ public class 矩阵中的路径 {
 
         // 记录结果，数量
         int pathLength = 0;
-        for (
-
-            int i = 0;
-
-            i < rows; i++)
-
-        {
+        for (int i = 0; i < rows; i++) {
             for (int j = 0; j < cols; j++) {
-                if (hasPathCore(matrix, str, visited, i, j, pathLength)) {
+                if (findPath(matrix, str, visited, i, j, pathLength)) {
                     return true;
                 }
             }
@@ -67,7 +52,7 @@ public class 矩阵中的路径 {
         return false;
 
     }
-
+    //回溯法
     /**
      *  * 
      *  * @param matrix
@@ -81,7 +66,7 @@ public class 矩阵中的路径 {
      *  * @return
      *  
      */
-    private static boolean hasPathCore(char[][] matrix, char[] str, boolean[][] visited, int i, int j, int pathLength) {
+    private static boolean findPath(char[][] matrix, char[] str, boolean[][] visited, int i, int j, int pathLength) {
         int m = matrix.length;
         int n = matrix[0].length;
         if (pathLength == str.length) {
@@ -92,10 +77,10 @@ public class 矩阵中的路径 {
             visited[i][j] = true;
             pathLength++;
             // 找到以后，递归去找一下个
-            hasPath = hasPathCore(matrix, str, visited, i, j - 1, pathLength)
-                || hasPathCore(matrix, str, visited, i - 1, j, pathLength)
-                || hasPathCore(matrix, str, visited, i, j + 1, pathLength)
-                || hasPathCore(matrix, str, visited, i + 1, j, pathLength);
+            hasPath = findPath(matrix, str, visited, i, j - 1, pathLength)
+                || findPath(matrix, str, visited, i - 1, j, pathLength)
+                || findPath(matrix, str, visited, i, j + 1, pathLength)
+                || findPath(matrix, str, visited, i + 1, j, pathLength);
             if (!hasPath) {
                 pathLength--;
                 visited[i][j] = false;

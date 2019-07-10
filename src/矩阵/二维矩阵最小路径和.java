@@ -27,7 +27,6 @@ public class 二维矩阵最小路径和 {
             for(int j=1;j<grid[0].length;j++)
             {
                 sum[i][j]=Math.min(sum[i-1][j],sum[i][j-1])+grid[i][j];
-
             }
         }
         return sum[grid.length-1][grid[0].length-1];
