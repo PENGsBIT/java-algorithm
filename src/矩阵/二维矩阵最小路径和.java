@@ -1,3 +1,5 @@
+package 矩阵;
+
 public class 二维矩阵最小路径和 {
     public static void main(String[] args) {
         int[][] a = {

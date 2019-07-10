@@ -1,4 +1,4 @@
-//import javax.script.ScriptException;
+package 转化;//import javax.script.ScriptException;
 
 public class 四则运算转化为js {
 //    public static void main(String[] args) throws ScriptException {

@@ -20,7 +20,7 @@ public class 矩阵中的路径 {
      * *
      *
      * @param matrix 输入矩
-     * @param str 查询路径
+     * @param str    查询路径
      * @return
      */
     private static boolean hasPath(char[][] matrix, char[] str) {
@@ -85,7 +85,6 @@ public class 矩阵中的路径 {
         int m = matrix.length;
         int n = matrix[0].length;
         if (pathLength == str.length) {
-
             return true;
         }
         boolean hasPath = false;

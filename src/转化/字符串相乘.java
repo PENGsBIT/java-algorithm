@@ -1,3 +1,5 @@
+package 转化;
+
 public class 字符串相乘 {
     public static void main(String[] args) {
         //System.out.println(Arrays.stream(a).max().getAsInt());

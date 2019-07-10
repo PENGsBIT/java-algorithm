@@ -1,3 +1,5 @@
+package 数组;
+
 public class 洗牌算法 {
 
 

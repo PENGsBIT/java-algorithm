@@ -1,3 +1,5 @@
+package 转化;
+
 public class 单词反转 {
     public String ReverseSentence(String str) {
         char [] chars=str.toCharArray();

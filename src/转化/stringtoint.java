@@ -1,3 +1,5 @@
+package 转化;
+
 public class stringtoint {
     public static int myAtoi(String str) {
         //先剔除空格

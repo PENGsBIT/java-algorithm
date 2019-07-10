@@ -1,3 +1,5 @@
+package 转化;
+
 public class 回文manacger {
     public static void main(String[] args) {
         //String str = "abcdcbafabcdck";
