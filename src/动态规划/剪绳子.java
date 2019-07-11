@@ -14,6 +14,17 @@ public class 剪绳子 {
                 dp[i] = Math.max(dp[i], Math.max(j * (i - j), j * dp[i - j]));
         return dp[length];
     }
+    public static int cm(int n) {
+        int [] dp=new int[n+1];
+        dp[1] = 1;                       //1 = 1
+        dp[2] = 1;                       //2 = 1+1
+        dp[3] = 2;                       //3 = 1+2
+        dp[4] = 4;                       //4 = 2+2
+        for (int i = 5; i <= n; i++)
+            //i = 2+how i-2 was formed (or) 3+how i-3 was formed (or) 4+how i-4 was formed
+            dp[i] = Math.max(dp[i-2]*2,Math.max(dp[i-3]*3,dp[i-4]*4));
+        return dp[n];
+    }
     public int integerBreak(int n) {
         if (n < 2)
             return 0;
@@ -28,6 +39,6 @@ public class 剪绳子 {
         return (int) (Math.pow(3, timesOf3)) * (int) (Math.pow(2, timesOf2));
     }
     public static void main(String[] args) {
-        System.out.println(maxMuti(10));
+        System.out.println(cm(10));
     }
 }

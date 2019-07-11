@@ -4,8 +4,10 @@ public class 回文manacger {
 
 
     public static void main(String[] args) {
-        //String str = "abcdcbafabcdck";
-        String str = "acbdbceds";
+        String str = "abcdcbafabcdck";
+        //String str = "acbdbceds";
+        System.out.println(dp(str));
+        System.out.println(dp1(str));
         System.out.println(searchPalindrome(str));
         System.out.println(manacher(str));
         System.out.println(longestPalindrome(str));
@@ -13,12 +15,11 @@ public class 回文manacger {
 
     //O(n) Manacher
     public static char[] manacherString(String str) {
-        StringBuilder sb = new StringBuilder();
+        StringBuilder sb = new StringBuilder("$#");
         for (int i = 0; i < str.length(); i++) {
-            sb.append("#");
             sb.append(str.charAt(i));
+            sb.append("#");
         }
-        sb.append("#");
         return sb.toString().toCharArray();
     }
 
@@ -46,9 +47,9 @@ public class 回文manacger {
 //        2、下一个要移动的位置票p1不在最右回文右边界R的右边，且cL>pL。
 //        3、下一个要移动的位置票p1不在最右回文右边界R的右边，且cL=pL；
 
-        for (int i = 0; i < radius.length; i++) {
+        for (int i = 1; i < radius.length; i++) {
             radius[i] = R > i ? Math.min(radius[2 * c - i], R - i + 1) : 1;
-            while (i + radius[i] < charArr.length && i - radius[i] > -1) {
+            while (i - radius[i] > -1 &&i + radius[i] < charArr.length ) {
                 if (charArr[i - radius[i]] == charArr[i + radius[i]]) {
                     radius[i]++;
                 } else {
@@ -74,17 +75,19 @@ public class 回文manacger {
             sb.append("#");
         }
         char[] str = sb.toString().toCharArray();
+        //回文半径
         int[] r = new int[str.length];
-        int mx = 0, id = 0, ansR = 0, ansCenter = 0;
+        // mx最右回文右边界R ,最右回文右边界的对称中心Center
+        int mx = 0, center = 0, ansR = 0, ansCenter = 0;
         for (int i = 1; i < str.length; i++) {
-            r[i] = mx - i > r[i] ? Math.min(r[2 * id - i], mx - i) : 1;
+            r[i] = mx - i > r[i] ? Math.min(r[2 * center - i], mx - i) : 1;
             while (i - r[i] >= 0 && i + r[i] < str.length
                 && str[i - r[i]] == str[i + r[i]]) {
                 r[i]++;
             }
             if (i + r[i] > mx) {
                 mx = i + r[i];
-                id = i;
+                center = i;
             }
             if (ansR < r[i]) {
                 ansR = r[i];
@@ -96,21 +99,41 @@ public class 回文manacger {
     }
 
     //O(n2) dp
-    public String dp(String s) {
+    public static String dp(String s) {
         if(s == null || s.length() < 2) return s;
         int len = s.length();
+        //dp表示 以i结束的是不是回文
         int dp[] = new int[len];
         int startIndex = 0, endIndex = 0;
-        for(int j = 1; j < len; ++j){
-            for(int i = 0; i < j; ++i){
-                dp[i] = dp[i + 1] == 0 && s.charAt(i) == s.charAt(j) ? 0 : 1;
-                if(dp[i] == 0 && (j - i) > (endIndex - startIndex)){
-                    endIndex = j;
-                    startIndex = i;
+        for(int i = 1; i < len; ++i){
+            dp[i]=1;
+            for(int j = 0; j < i; ++j){
+                dp[j] = dp[j + 1] == 1 && s.charAt(j) == s.charAt(i) ? 1 : 0;
+                if(dp[j] == 1 && (i - j) > (endIndex - startIndex)){
+                    endIndex = i;
+                    startIndex = j;
                 }
             }
         }
         return s.substring(startIndex, endIndex + 1);
+    }
+
+    public static int dp1(String s) {
+        int len=s.length();
+        //dp i,j 从字符串i到j回文大小
+        int [][]dp=new int[len][len];
+        //
+        for (int i = len-1; i >=0 ; i--) {
+            dp[i][i]=1;
+            for (int j = i+1; j <len ; j++) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    dp[i][j] = dp[i + 1][j - 1]+2;
+                } else {
+                    dp[i][j] = Math.max(dp[i+1][j], dp[i][j-1]);
+                }
+            }
+        }
+        return dp[0][len-1];
     }
     //O(n2)
     //中心扩展法

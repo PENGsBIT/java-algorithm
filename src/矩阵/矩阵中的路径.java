@@ -34,11 +34,6 @@ public class 矩阵中的路径 {
 
         // 变量初始化，没有访问过为false 访问过为true
         boolean[][] visited = new boolean[rows][cols];
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                visited[i][j] = false;
-            }
-        }
 
         // 记录结果，数量
         int pathLength = 0;
