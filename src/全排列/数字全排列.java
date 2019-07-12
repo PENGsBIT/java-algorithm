@@ -17,7 +17,7 @@ public class 数字全排列 {
                 return;
             }
             for (int i = start; i <= end; i++) {
-                swap(arr, i, start);
+                swap(arr, start,i );
                 fullSort(arr, start + 1, end);
                 swap(arr, i, start);
             }

@@ -107,11 +107,19 @@ public class 回文manacger {
         int startIndex = 0, endIndex = 0;
         for(int i = 1; i < len; ++i){
             dp[i]=1;
-            for(int j = 0; j < i; ++j){
-                dp[j] = dp[j + 1] == 1 && s.charAt(j) == s.charAt(i) ? 1 : 0;
-                if(dp[j] == 1 && (i - j) > (endIndex - startIndex)){
-                    endIndex = i;
-                    startIndex = j;
+//            for(int j = 0; j < i; ++j){
+//                //检测上个i结束的是不是回文，加上这次的char
+//                dp[j] = dp[j + 1] == 1 && s.charAt(j) == s.charAt(i) ? 1 : 0;
+//                if(dp[j] == 1 && (i - j) > (endIndex - startIndex)){
+//                    endIndex = i;
+//                    startIndex = j;
+//                }
+//            }
+            for (int j = i; 0<=j; j--) {
+                dp[j] = s.charAt(i) == s.charAt(j) ? 1 : 0;
+                if (dp[j] == 1 && (i - j) > (endIndex - startIndex)) {
+                    endIndex=i;
+                    startIndex=j;
                 }
             }
         }

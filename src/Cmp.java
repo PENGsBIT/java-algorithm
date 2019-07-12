@@ -1,7 +1,4 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.Comparator;
-import java.util.LinkedList;
+import java.util.*;
 
 public class Cmp {
     public static void main(String[] args) {
@@ -31,6 +28,24 @@ public class Cmp {
         arr.add(6);
         Collections.sort(arr,cmp2);
         System.out.println(arr);
+
+        //TreeMap底层是根据红黑树的数据结构构建的，默认是根据key的自然排序来组织（比如integer的大小，String的字典排序）。
+        // 所以，TreeMap只能根据key来排序，是不能根据value来排序的（否则key来排序根本就不能形成TreeMap）。
+        Map<String,String> map = new TreeMap<String,String>();
+        map.put("a", "dddd");
+        map.put("d", "aaaa");
+        map.put("b", "cccc");
+        map.put("c", "bbbb");
+        List<Map.Entry<String, String>> list = new ArrayList<Map.Entry<String, String>>(map.entrySet());
+        Collections.sort(list, new Comparator<HashMap.Entry<String, String>>() {
+            @Override
+            public int compare(Map.Entry<String, String> o1, Map.Entry<String, String> o2) {
+                return o1.getValue().compareTo(o2.getValue());
+            }
+        });
+        for (Map.Entry<String, String> entry : list) {
+            System.out.println(entry.getKey()+":"+entry.getValue());
+        }
 
 
     }

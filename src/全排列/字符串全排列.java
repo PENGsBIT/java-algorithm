@@ -3,22 +3,18 @@ package 全排列;
 import java.util.*;
 
 public class 字符串全排列 {
+    private static TreeSet<String> res = new TreeSet<>(((o1, o2) -> o1.compareTo(o2)));
     public static void main(String[] args) {
         String s = "caab";
         //System.out.println(Permutation(s));
-        TreeSet<String> res = new TreeSet<String>((o1, o2) -> o1.compareTo(o2));
         permute(s.toCharArray(), 0, res);
-
-//        for (String item: res
-//             ) {
         System.out.println(res.toString());
-        //}
     }
 
     public static void permute(char[] a, int i, TreeSet<String> res) {
-//        if(a==null || i<0 || i>a.length){
-//            return;
-//        }
+        if(a==null || i<0 || i>a.length){
+            return;
+        }
         if (i == a.length - 1) {
             res.add(String.valueOf(a));
         } else {
@@ -26,6 +22,20 @@ public class 字符串全排列 {
                 swap(a, i, j);       //交换前缀,使之产生下一个前缀
                 permute(a, i + 1, res);
                 swap(a, i, j);       //将前缀换回来,继续做上一个的前缀排列
+            }
+        }
+    }
+    private void permute(char[] chars, int curChar, int end) {
+        if (chars.length == 0) {
+            throw new IllegalArgumentException(this.getClass().getName());
+        }
+        if (curChar == end) {
+            res.add(String.valueOf(chars));
+        } else {
+            for (int i = curChar; i < chars.length; i++) {
+                swap(chars, curChar, i);
+                permute(chars, curChar + 1, end);
+                swap(chars, curChar, i);
             }
         }
     }
