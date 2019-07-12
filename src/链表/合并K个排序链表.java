@@ -9,13 +9,9 @@ public class 合并K个排序链表 {
         ListNode b=new ListNode(2);
         b.next=new ListNode(8);
         ListNode[] lists={a,b};
-        //System.out.println(mergeKLists(lists));
+        System.out.println(mergeKLists(lists));
     }
-    public static class ListNode {
-        int val;
-        ListNode next;
-        ListNode(int x) { val = x; }
-    }
+
 
     public static ListNode mergeKLists(ListNode[] lists){
         if(lists.length == 0)

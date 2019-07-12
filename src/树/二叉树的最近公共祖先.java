@@ -11,9 +11,8 @@ public class 二叉树的最近公共祖先 {
         System.out.println(lowestCommonAncestor(root,p,q).val);
     }
     public static TreeNode lowestCommonAncestor(TreeNode root, int p, int q) {
-        // LCA 问题，查阅相关资料
         if (root == null) {
-            return root;
+            return null;
         }
         if (root.val == p || root.val == q) {
             return root;

@@ -1,4 +1,6 @@
-package 树;
+package 树.二叉搜索树;
+
+import 树.TreeNode;
 
 public class 二叉树中的最大路径和 {
     private int ret = Integer.MIN_VALUE;

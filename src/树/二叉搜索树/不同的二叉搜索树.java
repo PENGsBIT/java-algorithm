@@ -1,4 +1,4 @@
-package 树;
+package 树.二叉搜索树;
 
 /**
  * @program: javatest

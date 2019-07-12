@@ -1,9 +1,6 @@
-import 树.TreeNode;
+package 树;
 
-import java.util.*;
-
-public class test {
-
+public class 序列化二叉树 {
     //请实现两个函数，分别用来序列化和反序列化二叉树。
     private String deserializeStr;
 
@@ -13,10 +10,10 @@ public class test {
         return root.val + " " + Serialize(root.left) + " " + Serialize(root.right);
     }
 
-//    public TreeNode Deserialize(String str) {
-//        deserializeStr = str;
-//        return Deserialize();
-//    }
+    public TreeNode Deserialize(String str) {
+        deserializeStr = str;
+        return Deserialize();
+    }
 
     private TreeNode Deserialize() {
         if (deserializeStr.length() == 0)
@@ -38,17 +35,11 @@ public class test {
         root.left=new TreeNode(2);
         root.right=new TreeNode(3);
         root.left.left=new TreeNode(4);
-        test t=new test();
-        t.deserializeStr=t.Serialize(root);
-        System.out.println(t.deserializeStr);
-        System.out.println(t.Deserialize());
+
+        序列化二叉树 t=new 序列化二叉树();
+        String k=t.Serialize(root);
+        System.out.println(k);
+        System.out.println(t.Deserialize(k));
+
     }
-
-
-
-    //前序与中序遍历序列构造二叉树
-
 }
-
-
-
