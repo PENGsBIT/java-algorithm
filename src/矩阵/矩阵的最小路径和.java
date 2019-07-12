@@ -19,7 +19,7 @@ public class 矩阵的最小路径和 {
     }
 
     public static int minPath(int[][] matrix) {
-        int[]dp=new int[matrix[0].length+1];
+        int[]dp=new int[matrix[0].length];
         int row=matrix.length,col=matrix[0].length;
         dp[0] = matrix[0][0];
         //计算第一行的最短路径

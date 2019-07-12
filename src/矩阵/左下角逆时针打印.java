@@ -8,14 +8,15 @@ public class 左下角逆时针打印 {
                 {1, 2, 3, 4},
                 {1, 2, 3, 4}
         };
-        int cols = martix[0].length - 1;
-        int rows = martix.length - 1;
-        ni(martix, rows, cols);
+
+        ni(martix);
     }
 
 
 
-    public static void ni(int[][] matrix, int rows, int cols) {
+    public static void ni(int[][] matrix) {
+        int cols = matrix[0].length - 1;
+        int rows = matrix.length - 1;
         int r = cols, l = cols - r, d = rows, u = rows - d;
         while (l <= r && u <= d) {
             if (l == r)
