@@ -1,6 +1,6 @@
 package 树.二叉搜索树;
 
-public class BST {
+public class BST后序遍历验证 {
 
 
     public boolean VerifySquenceOfBST(int [] sequence) {
@@ -27,10 +27,9 @@ public class BST {
     }
 
     public static void main(String[] args) {
-        BST t =new BST();
+        BST后序遍历验证 t =new BST后序遍历验证();
         int[] a={4,8,6,12,16,14,10};
         System.out.println( t.VerifySquenceOfBST(a));
-
 
     }
 }

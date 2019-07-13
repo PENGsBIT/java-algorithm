@@ -28,7 +28,6 @@ public class 连续子数组的最大和 {
                 else {
                     curMax += i;
                 }
-
                 // 更新记录到的最在的子数组和
                 if (max < curMax) {
                     max = curMax;

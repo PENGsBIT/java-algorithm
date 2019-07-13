@@ -49,10 +49,10 @@ public class 第K个 {
 //            return i;
 //        }
 //        return -1;
-        int i = l, j = r + 1;
+        int i = l+1, j = r;
         while (true) {
-            while (a[++i] < a[l] && i < r) ;
-            while (a[--j] > a[l] && j > l) ;
+            while (a[i] < a[l] && i < r) i++;
+            while (a[j] > a[l] && j > l) j--;
             if (i >= j) {
                 break;
             }

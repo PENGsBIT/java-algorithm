@@ -16,14 +16,17 @@ public class TopK {
     public static List<Integer> qselect(List<Integer> nums, int k) {
         List<Integer> list = new ArrayList<>();
         if (nums.size() < k) {
-            return list;
+            return nums;
         }
         Random random = new Random();
         int index = random.nextInt(nums.size() - 1);
 //        index = nums.size() - 1;
+        List<Integer> left = new ArrayList<>();
         for (int num : nums) {
             if (num >= nums.get(index)) {
                 list.add(num);
+            } else {
+                left.add(num);
             }
         }
         if (list.size() == k) {
@@ -31,12 +34,6 @@ public class TopK {
         } else if (list.size() > k) {
             return qselect(list, k);
         } else {
-            List<Integer> left = new ArrayList<>();
-            for (Integer num : nums) {
-                if (num < nums.get(index)) {
-                    left.add(num);
-                }
-            }
             left = qselect(left, k-list.size());
             list.addAll(left);
             return list;
