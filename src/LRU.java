@@ -2,6 +2,12 @@ import java.util.Hashtable;
 
 
 public class LRU {
+    class DLinkedNode {
+        int key;
+        int value;
+        DLinkedNode pre;
+        DLinkedNode next;
+    }
     private Hashtable<Integer, DLinkedNode> cache = new Hashtable<>();
     private int count;
     private int capacity;
@@ -21,12 +27,7 @@ public class LRU {
         tail.pre = head;
     }
 
-    class DLinkedNode {
-        int key;
-        int value;
-        DLinkedNode pre;
-        DLinkedNode next;
-    }
+
 
     /**
      * Always add the new node right after head;

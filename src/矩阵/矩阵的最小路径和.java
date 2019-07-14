@@ -41,8 +41,15 @@ public class 矩阵的最小路径和 {
                     dp[j] =Math.min(dp[j-1], dp[j]);
                     dp[j] += matrix[i][j];
                 }
-            }//for
-        }//for
+            }
+        }
+        //optimize
+        for (int[] rows : matrix) {
+            dp[0]+=rows[0];
+            for (int i = 1; i <col ; i++) {
+                dp[i] = Math.min(dp[i], dp[i - 1]) + rows[i];
+            }
+        }
 
         return dp[col - 1];
     }
