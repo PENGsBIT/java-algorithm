@@ -1,4 +1,4 @@
-package 树.二叉搜索树;
+package 树;
 
 import 树.TreeNode;
 

@@ -19,7 +19,7 @@ public class 编辑距离 {
      * b |x|x|x|x|      b |2|2|2|3|
      * c |x|x|x|x|      c |3|3|3|3|
      *
-     * Created by yulinfeng on 6/29/17.
+     * Created by zpc on 6/29/17.
      */
 
 }
@@ -27,7 +27,7 @@ class Levenshtein {
 
     public static void main(String[] args) {
         String s1 = "abc";
-        String s2 = "abd";
+        String s2 = "abdddd";
         int editDistance = levenshtein(s1, s2);
         System.out.println("s1=" + s1 + "与s2=" + s2 + "的编辑距离为：" + editDistance);
     }
@@ -56,7 +56,7 @@ class Levenshtein {
          * b |2|x|x|x|
          * c |3|x|x|x|
          */
-        for (int i = 0; i < m + 1; i++) {
+        for (int i = 0; i <= m; i++) {
             solutionMatrix[i][0] = i;
         }
         /**
@@ -66,7 +66,7 @@ class Levenshtein {
          * b |x|x|x|x|
          * c |x|x|x|x|
          */
-        for (int j = 0; j < n + 1; j++) {
+        for (int j = 0; j <= n ; j++) {
             solutionMatrix[0][j] = j;
         }
         /**
