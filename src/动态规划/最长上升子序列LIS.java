@@ -2,6 +2,7 @@ package 动态规划;
 
 public class 最长上升子序列LIS {
     public static void main(String[] args) {
+        System.out.println(optimizeLIS(new int[]{1,5,3,4,6,9,7,8}));
         System.out.println(LIS(new int[]{1,5,3,4,6,9,7,8}));
     }
     //o(n2)
@@ -28,8 +29,10 @@ public class 最长上升子序列LIS {
     //O(nlogn)
     public static int optimizeLIS(int[]nums){
         int score = 0;
+        int count = 0;
         int n=nums.length;
         int[]dp=new int[n];
+        //
         for (int i = 0; i < n; i++) {
             dp[i] = nums[i];
             for (int j = 0; j <= i; j++) {
@@ -37,8 +40,11 @@ public class 最长上升子序列LIS {
                     dp[i] = Math.max(dp[i], dp[j] + nums[i]);
                 }
             }
-            score = Math.max(score, dp[i]);
+            if (score < dp[i]) {
+                score = dp[i];
+                count++;
+            }
         }
-       return score;
+       return count;
     }
 }

@@ -18,7 +18,7 @@ public class LCS {
         char[] ary2 = str2.toCharArray();
 
         int[][] temp = new int[ary.length][ary2.length];	//声明一个二维数组，存储最长公共子串长度
-        int length = 0;	//最长公共子串长度
+        int longestLength = 0;	//最长公共子串长度
 
         for(int i = 0; i < ary2.length; i++){	//初始化二维矩阵中的第一行
             temp[0][i] = (ary[0] == ary2[i]) ? 1 : 0;
@@ -32,15 +32,15 @@ public class LCS {
             for (int j = 1; j < ary2.length; j++) {
                 if(ary[i] == ary2[j]){
                     temp[i][j] = temp[i-1][j-1] + 1;
-                    if(temp[i][j] > length){	//当前元素值大于最大公共子串长度
-                        length = temp[i][j];
+                    if(temp[i][j] > longestLength){	//当前元素值大于最大公共子串长度
+                        longestLength = temp[i][j];
                     }
                 }else{
                     temp[i][j] = 0;
                 }
             }
         }
-        return length;
+        return longestLength;
     }
 
 
