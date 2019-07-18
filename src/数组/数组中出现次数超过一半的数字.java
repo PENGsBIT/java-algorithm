@@ -30,6 +30,7 @@ public class 数组中出现次数超过一半的数字 {
             if (val == majority)
                 cnt++;
         return cnt > nums.length / 2 ? majority : 0;
+
     }
 
 
@@ -53,6 +54,6 @@ public class 数组中出现次数超过一半的数字 {
 
 
     public static void main(String[] args) {
-        MoreThanHalfNum_Solution(new int[]{1, 2, 3, 1, 1});
+        System.out.println(MoreThanHalfNum_Solution(new int[]{1, 2, 3, 1, 1}));;
     }
 }

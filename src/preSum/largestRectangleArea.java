@@ -13,8 +13,9 @@ public class largestRectangleArea {
         Stack<Integer> stack = new Stack<Integer>();
         int i = 0;
         int maxArea = 0;
-        int[] h = new int[height.length];
-        h = Arrays.copyOf(height, height.length);
+        int[] h = new int[height.length+1];
+        //后面看作高度为0
+        h = Arrays.copyOf(height, height.length+1);
         while(i < h.length){
             //如果栈是空的，那么索引i入栈。那么第一个i=0就进去吧。注意栈内保存的是索引，不是高度。然后i++。
             if(stack.isEmpty() || h[stack.peek()] <= h[i]){

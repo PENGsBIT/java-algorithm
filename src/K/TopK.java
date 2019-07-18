@@ -18,12 +18,12 @@ public class TopK {
         Random random = new Random();
         int index = random.nextInt(nums.size() - 1);
 //        index = nums.size() - 1;
-        List<Integer> left = new ArrayList<>();
+        List<Integer> rest = new ArrayList<>();
         for (int num : nums) {
             if (num >= nums.get(index)) {
                 list.add(num);
             } else {
-                left.add(num);
+                rest.add(num);
             }
         }
         if (list.size() == k) {
@@ -31,8 +31,8 @@ public class TopK {
         } else if (list.size() > k) {
             return qselect(list, k);
         } else {
-            left = qselect(left, k-list.size());
-            list.addAll(left);
+            rest = qselect(rest, k-list.size());
+            list.addAll(rest);
             return list;
         }
     }

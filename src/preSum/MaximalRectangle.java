@@ -11,7 +11,6 @@ public class MaximalRectangle {
                 {'1', '0', '1', '1', '1'},
                 {'1', '0', '0', '1', '0'}
         };
-        System.out.println(a[0]);
         System.out.println(maximalRectangle(a));
     }
 
@@ -21,8 +20,9 @@ public class MaximalRectangle {
         int[] height = new int[matrix[0].length + 1];
         int res = 0;
         for (int i = 0; i < matrix.length; i++) {
-            for (int j = 0; j < matrix[0].length; j++)
+            for (int j = 0; j < matrix[0].length; j++) {
                 height[j] = matrix[i][j] == '0' ? 0 : height[j] + 1;
+            }
             res = Math.max(res, largestRectangle(height));
         }
         return res;

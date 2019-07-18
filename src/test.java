@@ -1,53 +1,48 @@
-import 树.TreeNode;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
-import java.util.*;
-
+//24
 public class test {
-
-    //请实现两个函数，分别用来序列化和反序列化二叉树。
-    private String deserializeStr;
-
-    public String Serialize(TreeNode root) {
-        if (root == null)
-            return "#";
-        return root.val + " " + Serialize(root.left) + " " + Serialize(root.right);
-    }
-
-//    public TreeNode Deserialize(String str) {
-//        deserializeStr = str;
-//        return Deserialize();
-//    }
-
-    private TreeNode Deserialize() {
-        if (deserializeStr.length() == 0)
-            return null;
-        int index = deserializeStr.indexOf(" ");
-        String node = index == -1 ? deserializeStr : deserializeStr.substring(0, index);
-        deserializeStr = index == -1 ? "" : deserializeStr.substring(index + 1);
-        if (node.equals("#"))
-            return null;
-        int val = Integer.valueOf(node);
-        TreeNode t = new TreeNode(val);
-        t.left = Deserialize();
-        t.right = Deserialize();
-        return t;
-    }
-
     public static void main(String[] args) {
-        TreeNode root=new TreeNode(1);
-        root.left=new TreeNode(2);
-        root.right=new TreeNode(3);
-        root.left.left=new TreeNode(4);
-        test t=new test();
-        t.deserializeStr=t.Serialize(root);
-        System.out.println(t.deserializeStr);
-        System.out.println(t.Deserialize());
+        for (int j = 0; j <10 ; j++) {
+            Random r1=new Random();
+            ArrayList<Integer> list1=new ArrayList<>();
+            for (int i = 1; i <=20; i++) {
+                list1.add(r1.nextInt(i));
+            }
+            System.out.println(qselect(list1,10 ));
+        }
+
     }
 
 
-
-    //前序与中序遍历序列构造二叉树
-
+    public static List<Integer> qselect(List<Integer> nums, int k) {
+        List<Integer> list = new ArrayList<>();
+        if (nums.size() < k) {
+            return nums;
+        }
+        Random random = new Random();
+        int index = random.nextInt(nums.size() - 1);
+//        index = nums.size() - 1;
+        List<Integer> rest = new ArrayList<>();
+        for (int num : nums) {
+            if (num >= nums.get(index)) {
+                list.add(num);
+            } else {
+                rest.add(num);
+            }
+        }
+        if (list.size() == k) {
+            return list;
+        } else if (list.size() > k) {
+            return qselect(list, k);
+        } else {
+            rest = qselect(rest, k-list.size());
+            list.addAll(rest);
+            return list;
+        }
+    }
 }
 
 
