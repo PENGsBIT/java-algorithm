@@ -9,9 +9,12 @@ public class TopK {
         List<Integer> nums = new ArrayList<Integer>(Arrays.asList(a));
         System.out.println(qselect(nums, 2));
     }
-
+//无法处理数组中有重复的情况。对于数组中有重复数字的情况，
+// 可以先扫描整个数组，利用HashSet或其他数据结构得到所有唯一的数字，然后使用本算法处理。
+    //改进使用equal数组存储相等的值
     public static List<Integer> qselect(List<Integer> nums, int k) {
         List<Integer> list = new ArrayList<>();
+        List<Integer> equal = new ArrayList<>();
         if (nums.size() < k) {
             return nums;
         }
@@ -20,8 +23,10 @@ public class TopK {
 //        index = nums.size() - 1;
         List<Integer> rest = new ArrayList<>();
         for (int num : nums) {
-            if (num >= nums.get(index)) {
+            if (num > nums.get(index)) {
                 list.add(num);
+            } else if (num == nums.get(index)) {
+                equal.add(num);
             } else {
                 rest.add(num);
             }
@@ -30,7 +35,12 @@ public class TopK {
             return list;
         } else if (list.size() > k) {
             return qselect(list, k);
-        } else {
+        }else if (list.size()+equal.size()>=k) {
+            int r=k - list.size();
+            list.addAll(equal.subList(0, r));
+            return list;
+        }
+        else {
             rest = qselect(rest, k-list.size());
             list.addAll(rest);
             return list;
