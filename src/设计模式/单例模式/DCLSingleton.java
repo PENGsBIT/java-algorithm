@@ -1,7 +1,7 @@
 package 设计模式.单例模式;
 
 //double checked locking模式
-class DCLSingleton {
+public class DCLSingleton {
 
     private volatile static DCLSingleton DCLSingleton;//将 instance 变量声明成 volatile 保证JVM 的即时编译器中不会指令重排序的优化
 
@@ -23,5 +23,26 @@ class DCLSingleton {
             }
         }
         return DCLSingleton;
+    }
+}
+//对双重检查锁定的升级版本
+class DCLOptimizeSingleton {
+
+    private static volatile DCLOptimizeSingleton instance = null;
+
+    private DCLOptimizeSingleton() {}
+
+    public static DCLOptimizeSingleton getInstance () {
+        DCLOptimizeSingleton inst = instance;  // <<< 在这里创建临时变量
+        if (inst == null) {
+            synchronized (DCLOptimizeSingleton.class) {
+                inst = instance;
+                if (inst == null) {
+                    inst = new DCLOptimizeSingleton();
+                    instance = inst;
+                }
+            }
+        }
+        return inst;  // <<< 注意这里返回的是临时变量
     }
 }

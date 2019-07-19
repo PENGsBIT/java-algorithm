@@ -16,11 +16,11 @@ public class 饿汉 {
 }
  class Singleton {
      //当类第一次被加载到内存它就实例化了，所以这种实例的创建方式是线程安全的。
-    private static final Singleton instance = new Singleton();
+    private static final DCLOptimizeSingleton instance = new DCLOptimizeSingleton();
 
     private Singleton() {}
 
-    public static Singleton getInstance() {
+    public static DCLOptimizeSingleton getInstance() {
         return instance;
     }
 
