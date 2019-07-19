@@ -3,7 +3,7 @@ package preSum;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class largestRectangleArea {
+public class 最大长方形面积 {
     public static void main(String[] args) {
         int[] a = {2,1,5,6,2,3};
         //System.out.println(Arrays.toString(a[0]));

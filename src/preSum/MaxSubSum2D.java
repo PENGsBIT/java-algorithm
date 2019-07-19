@@ -2,7 +2,7 @@ package preSum;
 
 import java.util.Arrays;
 
-public class maxSubSum2D {
+public class MaxSubSum2D {
     public static void main(String[] args) {
         int[][] a = {
                 {0, -2, -7, 0,1},
