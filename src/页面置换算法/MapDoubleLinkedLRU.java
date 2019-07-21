@@ -1,7 +1,9 @@
+package 页面置换算法;
+
 import java.util.Hashtable;
 
 
-public class LRU {
+public class MapDoubleLinkedLRU {
     class DLinkedNode {
         int key;
         int value;
@@ -13,7 +15,7 @@ public class LRU {
     private int capacity;
     private DLinkedNode head, tail;
 
-    public LRU(int capacity) {
+    public MapDoubleLinkedLRU(int capacity) {
         this.count = 0;
         this.capacity = capacity;
 

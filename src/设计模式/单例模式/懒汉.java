@@ -13,14 +13,14 @@ package 设计模式.单例模式;/**
 
 public class 懒汉 {
 }
-class Sinleton{
-    private static Sinleton sinleton;
-    Sinleton(){
+class lanHanSinleton {
+    private static lanHanSinleton sinleton;
+    lanHanSinleton(){
     }
 
-    public static synchronized Sinleton getInstance() {
+    public static synchronized lanHanSinleton getInstance() {
         if (sinleton == null) {
-            return new Sinleton();
+            return new lanHanSinleton();
         }
         return sinleton;
     }

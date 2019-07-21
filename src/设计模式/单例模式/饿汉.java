@@ -14,13 +14,13 @@ package 设计模式.单例模式;/**
 public class 饿汉 {
 
 }
- class Singleton {
+class eHanSingleton {
      //当类第一次被加载到内存它就实例化了，所以这种实例的创建方式是线程安全的。
-    private static final DCLOptimizeSingleton instance = new DCLOptimizeSingleton();
+    private static final eHanSingleton instance = new eHanSingleton();
 
-    private Singleton() {}
+    private eHanSingleton() {}
 
-    public static DCLOptimizeSingleton getInstance() {
+    public static eHanSingleton getInstance() {
         return instance;
     }
 

@@ -12,7 +12,7 @@ public class FutureTaskImpl {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
 
         ExecutorService executorService = new ThreadPoolExecutor(10, 15, 15L, TimeUnit.SECONDS,
-            new SynchronousQueue<>(),new ThreadPoolExecutor.AbortPolicy());
+            new LinkedBlockingDeque<>(),new ThreadPoolExecutor.AbortPolicy());
 
         Random r=new Random();
         int count=1;

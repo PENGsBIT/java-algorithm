@@ -4,8 +4,8 @@ public class 回文manacger {
 
 
     public static void main(String[] args) {
-        String str = "abcdcbafabcdck";
-        //String str = "acbdbceds";
+        //String str = "abcdcbafabcdck";
+        String str = "acbdbceds";
         System.out.println(dp(str));
         System.out.println(dp1(str));
         System.out.println(searchPalindrome(str));
@@ -102,10 +102,10 @@ public class 回文manacger {
     public static String dp(String s) {
         if(s == null || s.length() < 2) return s;
         int len = s.length();
-        //dp表示 以i结束的是不是回文
+        //dp表示 以i为中心的是不是回文
         int dp[] = new int[len];
         int startIndex = 0, endIndex = 0;
-        for(int i = 1; i < len; ++i){
+        for(int i = 0; i < len; ++i){
             dp[i]=1;
 //            for(int j = 0; j < i; ++j){
 //                //检测上个i结束的是不是回文，加上这次的char
