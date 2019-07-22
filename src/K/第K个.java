@@ -7,8 +7,8 @@ public class 第K个 {
      * @param args
      */
     public static void main(String[] args) {
-        int[] a = {10,-2,3,3,14,-1,16,1};
-        int ans = findKth(a, 1);
+      int[] a = {10,-2,3,3,14,-1,16,1};
+        int ans = findKth(a, 2);
         System.out.println("ans: " + ans);
     }
 
