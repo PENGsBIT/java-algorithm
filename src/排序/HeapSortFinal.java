@@ -3,7 +3,8 @@ package 排序;
 public class HeapSortFinal {
 
     public static void main(String[] args) {
-        int[] array = { 19, 38, 7, 36, 5, 5, 3, 2, 1, 0, 56 };
+//        int[] array = { 19, 38, 7, 36, 5, 5, 3, 2, 1, 0, 56 };
+        int[]array = {2, 3, 4, 1, 5};
 
         System.out.println("排序前:");
         for (int i = 0; i < array.length; i++) {
