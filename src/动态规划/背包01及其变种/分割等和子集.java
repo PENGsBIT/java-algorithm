@@ -27,6 +27,7 @@ public class 分割等和子集 {
 //                    我们就可以去掉一个维度
             for(int i = 0; i < nums.length; i++){
                 for(int j = sum; j >= nums[i]; j--){
+                    //dp[j]上一轮的状态||dp[j-num[i]]这一轮可能的状态
                     dp[j] = dp[j] || dp[j-nums[i]];
                 }
             }

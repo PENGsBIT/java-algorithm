@@ -22,7 +22,7 @@ public class 找零钱的最少硬币数 {
                     dp[i]=Math.min(dp[i],dp[i-coin]+1);
                 }
             }
-            if (flag == false) {
+            if (!flag) {
                 dp[i] = -1;
             }
         }
