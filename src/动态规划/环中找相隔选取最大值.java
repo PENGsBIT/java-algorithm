@@ -40,11 +40,12 @@ public class 环中找相隔选取最大值 {
 
     private static int chooseCore(int[] nums, int strart, int end) {
         int n=end-strart+1;
-        //dp记录从start开始在这n个数里能得到的max
+        //dp记录从start开始在这n个数里目前能得到的max
         int[]dp=new int[n];
         dp[0] = nums[strart];
-        dp[1] = Math.max(nums[strart], nums[strart+1]);
+       dp[1] = Math.max(nums[strart], nums[strart+1]);
         for (int i = 2; i <n ; i++) {
+            //选不选start+i位的数
             dp[i] = Math.max(dp[i - 2] + nums[strart + i], dp[i - 1]);
         }
         return dp[n - 1];
@@ -52,6 +53,7 @@ public class 环中找相隔选取最大值 {
 
 
     public static void main(String[] args) {
-        System.out.println(chooseMaxInCircle(new int[]{1,3,2,1}));
+
+        System.out.println(chooseMaxInCircle(new int[]{1,3,1,3,100}));
     }
 }
