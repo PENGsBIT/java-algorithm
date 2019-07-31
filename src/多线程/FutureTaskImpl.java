@@ -10,7 +10,6 @@ import java.util.concurrent.*;
 // 所以一个 FutureTask可以提交(submit)给一个Excutor执行(excution).
 public class FutureTaskImpl {
     public static void main(String[] args) throws InterruptedException, ExecutionException {
-
         ExecutorService executorService = new ThreadPoolExecutor(10, 15, 15L, TimeUnit.SECONDS,
             new LinkedBlockingDeque<>(),new ThreadPoolExecutor.AbortPolicy());
 

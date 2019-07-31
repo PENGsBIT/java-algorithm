@@ -4,10 +4,16 @@ import java.util.*;
 
 public class DAG拓扑 {
     public static void main(String[] args) {
-        tuoPuOrder(4,new int[][]{{0,1},{0,2},{1,3},{2,3}});
+        tuoPuOrder(4,new int[][]{
+                {0,1},
+                {0,2},
+                {1,3},
+                {2,3}
+        });
     }
-//出度变入度
+
     public static void tuoPuOrder(int n, int[][] chudu) {
+        //出度变入度
         Map<Integer,List<Integer>> rudu= new HashMap();
         for (int i = 0; i < n; i++) {
             List<Integer> p=new ArrayList<>();
@@ -19,6 +25,7 @@ public class DAG拓扑 {
                    rudu.put(chudu[i][1],p);
                 }
         }
+        //从入度为0的开始输出
         Queue<Integer> queue=new LinkedList<>();
         queue.add(0);
         while(!queue.isEmpty())
