@@ -7,9 +7,10 @@ public class MaxSubSum2D {
             { 9, 2, -6, 2, -2 },
             { -4, 1, -4, 1, 6 },
             { -1, 8, 0, -2, 9 }
+            //1,2,3 row sum 19
         };
         //System.out.println(Arrays.toString(a[0]));
-        System.out.println(maxSubSum2D(a, a.length, a[0].length));
+        System.out.println(maxSubSum2D(a));
     }
 
     //解方法为将这r行按列求和转为一维矩阵再求最大和，这里的一维矩阵其实就是子列和
@@ -19,7 +20,33 @@ public class MaxSubSum2D {
     //9, 2, -6, 2, 5
     //再该范围内再求最大子矩阵其实就是按列求和转为一维数组再求最大：
     //9,0,-13,2,8
-    public static int maxSubSum2D(int[][] matrix, int N, int M) {
+
+    private static int maxSubSum2D(int[][] a) {
+        if (a == null || a.length == 0) {
+            throw new IllegalArgumentException();
+        }
+        int n=a.length;
+        int m=a[0].length;
+        int max=Integer.MIN_VALUE;
+        for (int i = 0; i <n; i++) {
+            int[] temp = new int[m];
+
+            for (int j = i; j <n ; j++) {
+                for (int k = 0; k <m ; k++) {
+                    if (j == i) {
+                        temp[k] = a[i][k];
+                    } else {
+                        temp[k] += a[j][k];
+                    }
+                }
+                max=Math.max(max, maxSubSum(temp));
+            }
+        }
+        return max;
+    }
+
+    public static int maxSubSum2D1(int[][] matrix) {
+        int N=matrix.length, M=matrix[0].length;
         int sum = Integer.MIN_VALUE;
         int[][] totalColSum = new int[N][M];// 所有子列的和
         int[] subColSum = new int[M];//子列的和
@@ -63,9 +90,13 @@ public class MaxSubSum2D {
         if (a.length == 0 || a == null) {
             return 0;
         }
-        int maxSum = 0, curSum = 0;
-        for (int i = 0; i < a.length; i++) {
-            curSum = Math.max(curSum + a[i], a[i]);
+        int maxSum = Integer.MIN_VALUE, curSum = 0;
+//        for (int i = 0; i < a.length; i++) {
+//            curSum = Math.max(curSum + a[i], a[i]);
+//            maxSum = Math.max(maxSum, curSum);
+//        }
+        for (int num : a) {
+            curSum = Math.max(curSum + num, num);
             maxSum = Math.max(maxSum, curSum);
         }
 
