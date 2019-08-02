@@ -28,7 +28,8 @@ class MyThread extends Thread {
     }
 }
 
-
+//   MyRunnable mr=new MyRunnable();
+//       new Thread(mr).start();
 class MyRunnable implements Runnable {
     public void run() {
         System.out.println(Thread.currentThread().getName());
