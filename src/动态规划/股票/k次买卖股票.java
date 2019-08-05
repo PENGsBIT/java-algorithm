@@ -23,7 +23,7 @@ public class k次买卖股票 {
         int []buy=new int[k+1];
         int []sell=new int[k+1];
         Arrays.fill(buy,Integer.MIN_VALUE);
-        int cur;
+
         //通过数组记录每次buy & sell 后的最大值（eg： 第一次买入3元， 其实就是目前收入 -3）。
         //1.第k次buy就是 上一次卖出剩下的钱 - 本次购买需要的钱
         //2.第k次sell就是 第k次买入 + 本次卖出的钱
@@ -34,15 +34,21 @@ public class k次买卖股票 {
             }
         }
         return sell[k];
-        //
-//        for (int i=0; i<len; ++i){
-//            cur = prices[i];
-//            for(int j=k; j>0; --j){
-//                sell[j] = Math.max(sell[j],buy[j] + cur);
-//                buy[j] = Math.max(buy[j],sell[j-1] - cur);
+
+        //只用大小为k的一维数组记录到达第i天时的局部最优解和全局最优解。需要注意的是，
+        // 由于第i天时交易k次的最优解依赖于第i-1天时交易k-1次的最优解，所以数组更新应当从后往前（即从k到1）更新。
+//        int[] local = new int[k + 1];
+//        int[] global = new int[k + 1];
+//
+//        for (int i = 1; i < prices.length ; i++) {
+//            int diff = prices[i] - prices[i - 1];
+//
+//            for (int j = k; j > 0; j--) {
+//                local[j] = Math.max(global[j - 1], local[j] + diff);
+//                global[j] = Math.max(global[j], local[j]);
 //            }
 //        }
-//        return sell[k];
+
     }
 
     public static void main(String[] args) {

@@ -17,7 +17,7 @@ public class 买卖两次 {
         int []sell=new int[3];
         Arrays.fill(buy,Integer.MIN_VALUE);
         for (int price : prices) {
-            for (int i = 1; i <3 ; i++) {
+            for (int i = 1; i <=2 ; i++) {
                 buy[i]=Math.max(buy[i],sell[i-1]+price);
                 sell[i]=Math.max(sell[i],buy[i]-price);
             }
