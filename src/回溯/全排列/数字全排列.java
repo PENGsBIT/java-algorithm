@@ -1,4 +1,4 @@
-package 全排列;
+package 回溯.全排列;
 
 import java.util.Arrays;
 

@@ -1,4 +1,4 @@
-package 全排列;
+package 回溯.全排列;
 
 import java.util.Arrays;
 //输入一个字符串，按字典序打印出该字符串中字符的所有排列。

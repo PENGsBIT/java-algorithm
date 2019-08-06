@@ -1,29 +1,26 @@
-package 多线程;
+package 多线程.生产者和消费者的5种方式;
 
 import java.util.concurrent.ArrayBlockingQueue;
 import java.util.concurrent.BlockingQueue;
 
-public class 生产者消费者 {
-
-}
 /**
- * 生产者和消费者，wait()和notify()的实现
+ * 生产者和消费者，阻塞队列BlockingQueue的实现
  *
  */
-class Test3 {
+class 阻塞队列BlockingQueue的实现 {
     private static Integer count = 0;
     //创建一个阻塞队列
     final BlockingQueue blockingQueue = new ArrayBlockingQueue<>(10);
     public static void main(String[] args) {
-        Test3 test3 = new Test3();
-        new Thread(test3.new Producer()).start();
-        new Thread(test3.new Consumer()).start();
-        new Thread(test3.new Producer()).start();
-        new Thread(test3.new Consumer()).start();
-        new Thread(test3.new Producer()).start();
-        new Thread(test3.new Consumer()).start();
-        new Thread(test3.new Producer()).start();
-        new Thread(test3.new Consumer()).start();
+        阻塞队列BlockingQueue的实现 blockQueueTest = new 阻塞队列BlockingQueue的实现();
+        new Thread(blockQueueTest.new Producer()).start();
+        new Thread(blockQueueTest.new Consumer()).start();
+        new Thread(blockQueueTest.new Producer()).start();
+        new Thread(blockQueueTest.new Consumer()).start();
+        new Thread(blockQueueTest.new Producer()).start();
+        new Thread(blockQueueTest.new Consumer()).start();
+        new Thread(blockQueueTest.new Producer()).start();
+        new Thread(blockQueueTest.new Consumer()).start();
     }
     class Producer implements Runnable {
         @Override
