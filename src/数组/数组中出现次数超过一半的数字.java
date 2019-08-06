@@ -26,6 +26,7 @@ public class 数组中出现次数超过一半的数字 {
             }
         }
         int cnt = 0;
+        //验证没有major 的情况
         for (int val : nums)
             if (val == majority)
                 cnt++;
