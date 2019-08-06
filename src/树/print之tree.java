@@ -85,7 +85,6 @@ public class print之tree {
         }
     }
 
-    //hapjin test
     public static void main(String[] args) {
         int[] eles = {20,10,30,5,12,25,40};
 //        int[] eles = {20,10,30,12,25};

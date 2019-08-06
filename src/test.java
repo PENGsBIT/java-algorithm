@@ -1,25 +1,18 @@
-//24
+import java.io.IOException;
+import java.io.InputStream;
+import java.lang.reflect.Array;
+import java.net.ServerSocket;
+import java.net.Socket;
+import java.util.Arrays;
+import java.util.Stack;
+
 public class test {
+
     public static void main(String[] args) {
 
+
     }
+
+
 
 }
-class Singleton{
-    private static volatile Singleton singleton;
-
-    public Singleton() {
-    }
-    public static Singleton getInstance() {
-        if (singleton == null) {
-            synchronized (Singleton.class) {
-                if (singleton == null) {
-                    return new Singleton();
-                }
-            }
-        }
-        return singleton;
-    }
-}
-
-

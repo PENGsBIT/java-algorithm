@@ -42,6 +42,41 @@ public class LCS {
         }
         return longestLength;
     }
+    //经典动态规划的方法需要大小为M*N的 dp 矩阵，但实际上是可以减少至O（1）的，因为计算每一个dp[i][j]的时候只需要计算dp[i-1][j-1],所以按照斜线方向计算所有的值，只需要一个变量就可以计算：
+    public static void Lcss1(char str1[],char str2[])
+    {
+        int len=0,max=0;
+        int row=0;
+        int col=str2.length-1;
+        //计算矩阵中的每一条斜对角线上值。
+        while(row<str1.length)
+        {
+            int i=row;
+            int j=col;
+            while(i<str1.length&&j<str2.length)
+            {
+                if(str1[i]==str2[j])
+                {
+                    len++;
+                    max=Math.max(max, len);
+                }
+                else {
+                    len=0;
+                }
+                i++;
+                j++;
+            }
+            if(col>0)
+            {
+                col--;
+            }
+            else {
+                row++;
+            }
+        }
+
+        System.out.println(max);
+    }
 
 
 }
