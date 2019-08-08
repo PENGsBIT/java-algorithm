@@ -21,6 +21,12 @@ public class randa2randb {
     }
     public static int Rand7(){
         int x = ~(1<<31); // max int
+        //可能while循环要进行很多次才能返回。 因为Rand25会产生1到25的数，而只有1到7时才跳出while循环， 生成大部分的数都舍弃掉了。这样的实现明显不好。
+        // 我们应该让舍弃的数尽量少， 于是我们可以修改while中的判断条件，让x与最接近25且小于25的7的倍数相比。
+//        while(x > 7)
+//            x = 5 * (Rand5() - 1) + Rand5() // Rand25
+//        return x;
+
         while(x > 21)
             x = 5 * (Rand5() - 1) + Rand5(); // Rand25
         return x%7 + 1;
