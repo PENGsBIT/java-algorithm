@@ -1,7 +1,0 @@
-
-usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(š…ª8­òäÍ¿-
-zsquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(†şğ’ıÿÿÿÿ8­òäÍ¿-
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(°‰«æûÿÿÿÿ8­òäÍ¿-
-jsquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ÍíÚ8­òäÍ¿-
-ysquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(°Ëìıûÿÿÿÿ8­òäÍ¿-

@@ -1,16 +1,0 @@
-
-usquid:S2293"YReplace the type specification in this constructor call with the diamond operator ("<>").(ì´»Ú8Ü¡»ÀÂ-
-Œsquid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(—™’Ç8Ü¡»ÀÂ-
-§%squid:RedundantThrowsDeclarationCheck"lRemove the declaration of thrown exception 'java.lang.Exception', as it cannot be thrown from method's body.(ÙØ¤Þýÿÿÿÿ8Ü¡»ÀÂ-
-‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(›íÑ¹ÿÿÿÿÿ8Ü¡»ÀÂ-
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¤ íÝþÿÿÿÿ8Ü¡»ÀÂ-
-Psquid:EmptyStatementUsageCheck"Remove this empty statement.(°ëä…ýÿÿÿÿ8Ü¡»ÀÂ-
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(‡êÃÙ8Ü¡»ÀÂ-
-@squid:S1659"Declare "h" on a separate line.(–‡Àžøÿÿÿÿ8Ü¡»ÀÂ-
-:squid:S1659"Declare "j" on a separate line.(—ýñ98Ü¡»ÀÂ-
-lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ìŠç×üÿÿÿÿ8Ü¡»ÀÂ-
-psquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(›íÑ¹ÿÿÿÿÿ8Ü¡»ÀÂ-
-ksquid:S00100"NRename this method name to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(—™’Ç8Ü¡»ÀÂ-
-ysquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(·¯šûÿÿÿÿ8Ü¡»ÀÂ-
-Jsquid:EmptyStatementUsageCheck"Remove this empty statement.(ñêË8Ü¡»ÀÂ-

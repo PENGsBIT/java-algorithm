@@ -1,10 +1,0 @@
-
-fsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(’Õ8Éš‘ú¼-
-ysquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(·¯šûÿÿÿÿ8Éš‘ú¼-
-jsquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ØÅÿ8Éš‘ú¼-
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(¶‡ø8Éš‘ú¼-
-fsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ÒÊ–8Éš‘ú¼-
-Msquid:S1612",Replace this lambda with a method reference.(¡—ÉÇÿÿÿÿÿ8Éš‘ú¼-
-Bsquid:S1481"&Remove this unused "k" local variable.(Þë¥ž8Éš‘ú¼-
-Qsquid:S1854"5Remove this useless assignment to local variable "k".(Þë¥ž8Éš‘ú¼-
