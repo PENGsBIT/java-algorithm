@@ -28,10 +28,15 @@ public class 分割回文串II {
 //        for (int i = 0; i <= n; i++) cut[i] = i-1;
        int[]cut=IntStream.rangeClosed(-1,n-1).toArray();
         for (int i = 0; i < n; i++) {
-            for (int j = 0; i-j >= 0 && i+j < n && s.charAt(i-j)==s.charAt(i+j) ; j++) // odd length palindrome
+            // odd length palindrome
+            for (int j = 0; i-j >= 0 && i+j < n && s.charAt(i-j)==s.charAt(i+j) ; j++)
+                //    a   b   a   |   c  c
+                //                    j  i
+                //           j-1  |  [j, i] is palindrome
+                //    cut(j-1) +  1
                 cut[i+j+1] = Math.min(cut[i+j+1],1+cut[i-j]);
-
-            for (int j = 1; i-j+1 >= 0 && i+j < n && s.charAt(i-j+1) == s.charAt(i+j); j++) // even length palindrome
+            // even length palindrome
+            for (int j = 1; i-j+1 >= 0 && i+j < n && s.charAt(i-j+1) == s.charAt(i+j); j++)
                 cut[i+j+1] = Math.min(cut[i+j+1],1+cut[i-j+1]);
         }
         return cut[n];
