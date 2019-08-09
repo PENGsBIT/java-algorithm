@@ -1,6 +1,6 @@
-package 转化;
+package 回文;
 
-public class 回文manacger {
+public class 最长回文字串 {
 
 
     public static void main(String[] args) {

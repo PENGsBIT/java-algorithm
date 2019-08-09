@@ -1,4 +1,4 @@
-/**
+package 图; /**
  * Java: 无回路有向图(Directed Acyclic 图.Graph)的拓扑排序
  *       该DAG图是通过邻接表实现的。
  *
@@ -333,7 +333,7 @@ public class ListDG {
         ListDG pG;
 
         // 自定义"图"(输入矩阵队列)
-        //pG = new ListDG();
+        //pG = new 图.ListDG();
         // 采用已有的"图"
         pG = new ListDG(vexs, edges);
 
