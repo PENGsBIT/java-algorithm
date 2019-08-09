@@ -11,32 +11,50 @@ package 回文;
 //解释: 进行一次分割就可将 s 分割成 ["aa","b"] 这样两个回文子串。
 //
 
+import java.util.stream.IntStream;
 
 public class 分割回文串II {
+    //“cut”数组的定义是子字符串的最小切割数。更具体地说，cut[n]存储字符串s[0，n-1]的切割数。
+    //解决方案的基本思想如下：
+    //初始化“cut”数组：对于具有n个字符s[0，n-1]的字符串，最多需要n-1个cut。因此，“cut”数组初始化为cut[i]=i-1
+    //在两个循环中使用两个变量来表示回文：
+    //外部循环变量“i”表示回文的中心。内部循环变量“j”表示回文的“半径”。显然，我是必须的。
+    //这个回文可以表示为s[i-j，i+j]。如果这个字符串确实是回文，那么cut[i+j]的一个可能值是cut[i-j]+1，
+    // 其中cut[i-j]对应s[0，i-j-1]，1对应回文[i-j，i+j]；
+    //当循环结束时，您将在切割处得到答案[s.length]
     public static int minCut(String s) {
-        int n = s.length();
-        int[]cut=new int[n+1];  // number of cuts for the first k characters
-        for (int i = 0; i <= n; i++) cut[i] = i-1;
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; i-j >= 0 && i+j < n && s.charAt(i-j)==s.charAt(i+j) ; j++) // odd length palindrome
-                cut[i+j+1] = Math.min(cut[i+j+1],1+cut[i-j]);
-
-            for (int j = 1; i-j+1 >= 0 && i+j < n && s.charAt(i-j+1) == s.charAt(i+j); j++) // even length palindrome
-                cut[i+j+1] = Math.min(cut[i+j+1],1+cut[i-j+1]);
+        // validate input
+        if (s == null || s.length() <= 1) {
+            return 0;
         }
-        return cut[n];
+        // dp
+        int N = s.length();
+        int[] dp = IntStream.range(0, N).toArray(); // initial value: dp[i] = i
+
+        for (int mid = 1; mid <  N; mid++) { // iterate through all chars as mid point of palindrome
+            // CASE 1. odd len: center is at index mid, expand on both sides
+            for (int start = mid, end = mid; start >= 0 && end < N && s.charAt(start) == s.charAt(end); start--, end++) {
+                int newCutAtEnd = (start == 0) ? 0 : dp[start - 1] + 1;
+                dp[end] = Math.min(dp[end], newCutAtEnd);
+            }
+            // CASE 2: even len: center is between [mid-1,mid], expand on both sides
+            for (int start = mid - 1, end = mid; start >= 0 && end < N && s.charAt(start) == s.charAt(end); start--, end++) {
+                int newCutAtEnd = (start == 0) ? 0 : dp[start - 1] + 1;
+                dp[end] = Math.min(dp[end], newCutAtEnd);
+            }
+        }
+        return dp[N - 1];
     }
 
 
-//    This can be solved by two points:
-//
-//    cut[i] is the minimum of cut[j - 1] + 1 (j <= i), if [j, i] is palindrome.
-//    If [j, i] is palindrome, [j + 1, i - 1] is palindrome, and c[j] == c[i].
+//    这可以通过两点来解决：
+//      1.如果[j，i]是回文，则cut[i]是cut[j-1]+1（j<=i）的最小值。
+//      2.如果[。j+1，i-1]是回文，c[j]==c[i]，则[j，i]是回文
 //    The 2nd point reminds us of using dp (caching).
 //
 //    a   b   a   |   c  c
-//    j  i
-//    j-1  |  [j, i] is palindrome
+//                    j  i
+//           j-1  |  [j, i] is palindrome
 //    cut(j-1) +  1
 
 
