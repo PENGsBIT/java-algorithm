@@ -1,14 +1,14 @@
 
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(†ù©æûÿÿÿÿ
 `squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(×ö™’
-csquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(”©¼¨
-Rsquid:S1197"8Move the array designator from the variable to the type.(Ýö²ûÿÿÿÿ
-Rsquid:S1197"8Move the array designator from the variable to the type.(¡¡ø£ýÿÿÿÿ
-Msquid:S1197"8Move the array designator from the variable to the type.(‚¡÷â
 `squid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(¸ü¼
-Osquid:S1854"5Remove this useless assignment to local variable "n".(Áî¢®ûÿÿÿÿ
+Rsquid:S1197"8Move the array designator from the variable to the type.(Ýö²ûÿÿÿÿ
 msquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(æò»â
-@squid:S1481"&Remove this unused "n" local variable.(Áî¢®ûÿÿÿÿ
-9squid:S1659"Declare "j" on a separate line.(™ïˆþÿÿÿÿ
+Rsquid:S1197"8Move the array designator from the variable to the type.(¡¡ø£ýÿÿÿÿ
+esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(†ù©æûÿÿÿÿ
+Osquid:S1854"5Remove this useless assignment to local variable "n".(Áî¢®ûÿÿÿÿ
 R
 squid:S106"9Replace this use of System.out or System.err by a logger.(ƒìîüýÿÿÿÿ
+csquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(”©¼¨
+9squid:S1659"Declare "j" on a separate line.(™ïˆþÿÿÿÿ
+@squid:S1481"&Remove this unused "n" local variable.(Áî¢®ûÿÿÿÿ
+Msquid:S1197"8Move the array designator from the variable to the type.(‚¡÷â

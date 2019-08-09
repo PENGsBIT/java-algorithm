@@ -1,16 +1,20 @@
 
-gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ýì€ý8¬ñÏº»-
+bsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¬ñÏº»-
+Vsquid:S1161":Add the "@Override" annotation above this method signature(“–ýþ8¬ñÏº»-
 Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(êû¦«þÿÿÿÿ8¬ñÏº»-
+squid:S106"9Replace this use of System.out or System.err by a logger.(®ýáëûÿÿÿÿ8ŒÈÌ£À-
 Y
 squid:S106"9Replace this use of System.out or System.err by a logger.(›Óð°þÿÿÿÿ8¬ñÏº»-
-Y
-squid:S106"9Replace this use of System.out or System.err by a logger.(›Óð°þÿÿÿÿ8¬ñÏº»-
-T
-squid:S106"9Replace this use of System.out or System.err by a logger.(þÑ·8¬ñÏº»-
 isquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(ŒïÝ8¬ñÏº»-
 osquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(¨¹¸ãÿÿÿÿÿ8¬ñÏº»-
-bsquid:S2142"FEither re-interrupt this method or rethrow the "InterruptedException".(ä ¹€8¬ñÏº»-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(›Óð°þÿÿÿÿ8¬ñÏº»-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(²‘öüÿÿÿÿ8µ¸íÄ-
+gsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(ýì€ý8¬ñÏº»-
+Ssquid:S1135"2Complete the task associated to this TODO comment.(» æžÿÿÿÿÿ8ŒÈÌ£À-
 ysquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ç³¡ÿÿÿÿÿ8¬ñÏº»-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(êû¦«þÿÿÿÿ8¬ñÏº»-
+T
+squid:S106"9Replace this use of System.out or System.err by a logger.(þÑ·8¬ñÏº»-
 Dsquid:S1148"#Use a logger to log this exception.(€ÉÔ…ýÿÿÿÿ8¬ñÏº»-
-Vsquid:S1161":Add the "@Override" annotation above this method signature(“–ýþ8¬ñÏº»-

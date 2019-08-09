@@ -1,5 +1,5 @@
 
-lsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ï‘Üc
-Ysquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¡ô©½-
 csquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(İ«Ã
 ‘squid:S1319"pThe return type of this method should be an interface such as "List" rather than the implementation "ArrayList".(ğ®úøÿÿÿÿ8ØŸ©½-
+Ysquid:UselessImportCheck"+Remove this unused import 'java.util.List'.(Õë±Äøÿÿÿÿ8¡ô©½-
+lsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(Ï‘Üc

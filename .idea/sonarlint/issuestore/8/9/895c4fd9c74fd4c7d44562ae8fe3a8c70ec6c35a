@@ -1,9 +1,7 @@
 
-Dsquid:EmptyStatementUsageCheck"Remove this empty statement.(íæ‘Ê
-Isquid:EmptyStatementUsageCheck"Remove this empty statement.(­›í‚ýÿÿÿÿ
-9squid:S1659"Declare "j" on a separate line.(‡ÿÉ ýÿÿÿÿ
-esquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Î™Ìœüÿÿÿÿ
-R
-squid:S106"9Replace this use of System.out or System.err by a logger.(ºþ¼šÿÿÿÿÿ
-hsquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ÿ÷øÕùÿÿÿÿ
-rsquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(·¯šûÿÿÿÿ
+@squid:S1659"Declare "j" on a separate line.(™ïˆþÿÿÿÿ8â¼ýÃÁ-
+osquid:S00101"MRename this class name to match the regular expression '^[A-Z][a-zA-Z0-9]*$'.(Ÿ÷øÕùÿÿÿÿ8â¼ýÃÁ-
+lsquid:CommentedOutCodeLine"<This block of commented-out lines of code should be removed.(Î™Ìœüÿÿÿÿ8â¼ýÃÁ-
+ysquid:S00120"WRename this package name to match the regular expression '^[a-z]+(\.[a-z][a-z0-9]*)*$'.(·¯šûÿÿÿÿ8â¼ýÃÁ-
+Y
+squid:S106"9Replace this use of System.out or System.err by a logger.(ºþ¼šÿÿÿÿÿ8â¼ýÃÁ-
