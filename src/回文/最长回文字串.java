@@ -103,14 +103,14 @@ public class 最长回文字串 {
         if(s == null || s.length() < 2) return s;
         int len = s.length();
         //dp表示 以i为中心的是不是回文
-        int dp[] = new int[len];
+        boolean dp[] = new boolean[len];
         int startIndex = 0, endIndex = 0;
         for(int i = 0; i < len; ++i){
-            dp[i]=1;
+            dp[i]=true;
             for(int j = 0; j < i; ++j){
                 //检测上个i结束的是不是回文，加上这次的char
-                dp[j] = dp[j + 1] == 1 && s.charAt(j) == s.charAt(i) ? 1 : 0;
-                if(dp[j] == 1 && (i - j) > (endIndex - startIndex)){
+                dp[j] = dp[j + 1]  && s.charAt(j) == s.charAt(i) ? true : false;
+                if(dp[j]  && (i - j) > (endIndex - startIndex)){
                     endIndex = i;
                     startIndex = j;
                     break;

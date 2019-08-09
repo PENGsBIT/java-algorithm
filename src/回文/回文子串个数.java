@@ -36,6 +36,21 @@ public class 回文子串个数 {
         }
     }
 
+    //dp
+    public int DPcountSubstrings(String s) {
+        int n = s.length();
+        int res = 0;
+        boolean[][] dp = new boolean[n][n];
+        //i开头j结尾的字串是否为回文
+        for (int i = n - 1; i >= 0; i--) {
+            for (int j = i; j < n; j++) {
+                dp[i][j] = s.charAt(i) == s.charAt(j) && (j - i < 3 || dp[i + 1][j - 1]);
+                if(dp[i][j]) ++res;
+            }
+        }
+        return res;
+    }
+
     public static void main(String[] args) {
         System.out.println(countSubstrings("aba"));
     }
