@@ -37,7 +37,7 @@ public class 判断是否为二分图 {
         }
         return true;
     }
-    //deal table
+    //longestSubStr table
     private boolean dfs(int curNode, int curcolor, int[] colors, int[][] graph) {
         if (colors[curNode] != -1) {
             return colors[curNode] == curcolor;
@@ -50,7 +50,7 @@ public class 判断是否为二分图 {
         }
         return true;
     }
-    //deal matrix
+    //longestSubStr matrix
     private static boolean dfs(int curNode, int curColor, int[][] matrix, int[] colors) {
         if (colors[curNode] != -1) {
             return colors[curNode] == curColor;

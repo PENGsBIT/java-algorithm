@@ -15,7 +15,7 @@ import java.util.Map;
 
 
 public class ab序列中最多改变k个字符找到最长的连续a子串或者b子串长度 {
-    public static int deal(char[] s, int k) {
+    public static int longestSubStr(char[] s, int k) {
         Map<Character, Integer> charMap = new HashMap<>();
         for (char c : s) {
             charMap.put(c,charMap.getOrDefault(c,1)+1);
@@ -39,7 +39,9 @@ public class ab序列中最多改变k个字符找到最长的连续a子串或者
                     cnt++;
                 } else {
                     //while (l < s.length && s[l] != 'b') l++;
-                    while (l < s.length && !charMap.containsKey(s[l])) l++;
+                    while (l <= r && s[l]==major) {
+                        l++;
+                    }
                     l++;
                     r++;
                 }
@@ -48,14 +50,14 @@ public class ab序列中最多改变k个字符找到最长的连续a子串或者
         }
         return res;
 
-
     }
 
 
     public static void main(String[] args) {
-        //System.out.println(longestSubStr("abba",2));
-        System.out.println(deal("aabaabaa".toCharArray(), 1));
-        System.out.println(deal("NSNNNNGNNNNNNNNSNNNN".toCharArray(), 2));
+        System.out.println(longestSubStr("NSNNNNGNNNNNNNNSNNNN".toCharArray(), 2));
+        System.out.println(longestSubStr("abba".toCharArray(),2));
+        System.out.println(longestSubStr("aabaabaa".toCharArray(), 1));
+
     }
 
 
