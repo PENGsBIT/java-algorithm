@@ -58,7 +58,7 @@ public class 快排 {
         if (l < r) {
             int i = l;
             int j = r;
-            int temp = a[i];
+            int temp = a[l];
             while (i < j) {
                 while (i < j && a[j] >= temp) {
                     j--;
