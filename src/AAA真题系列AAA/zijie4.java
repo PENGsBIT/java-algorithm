@@ -1,3 +1,5 @@
+package AAA真题系列AAA;
+
 import java.util.Scanner;
 
 public class zijie4 {

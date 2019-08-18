@@ -13,7 +13,7 @@ public class 最小区间 {
             nums.add(temp);
         }
             //findminrange(nums);
-        smallestRange(nums);
+        System.out.println(Arrays.toString(smallestRange(nums)));
     }
 
     public static int[] smallestRange(List<List<Integer>> nums) {

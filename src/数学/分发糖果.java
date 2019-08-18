@@ -1,4 +1,4 @@
-/**
+package 数学; /**
  * @program: javatest
  * @author: zpc
  * @create: 2019-07-23 21:05
@@ -8,7 +8,7 @@ import java.util.Arrays;
 
 /**
  * @Author: zpc
- * @Description: 分发糖果
+ * @Description: 数学.分发糖果
  * @Create: 2019-07-23 21:05
  **/
 

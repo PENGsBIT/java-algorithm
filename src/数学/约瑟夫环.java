@@ -1,5 +1,8 @@
 package 数学;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * @program: javatest
  * @author: zpc
@@ -18,5 +21,28 @@ public class 约瑟夫环 {
         if (n == 1)     /* 递归返回条件 */
             return 0;
         return (LastRemaining_Solution(n - 1, m) + m) % n;
+    }
+    public static void yuesefu(int totalNum, int k, int countNum) {
+        // 初始化人数
+        List<Integer> start = new ArrayList<Integer>();
+        for (int i = 1; i <= totalNum; i++) {
+            start.add(i);
+        }
+        //从第K个开始计数
+        k = k - 1;
+        while (start.size() > 0) {
+            k = k + countNum;
+            //第m人的索引位置
+            k = k % (start.size()) - 1;
+            // 判断是否到队尾
+            if (k < 0) {
+                System.out.println(start.get(start.size() - 1));
+                start.remove(start.size() - 1);
+                k = 0;
+            } else {
+                System.out.println(start.get(k));
+                start.remove(k);
+            }
+        }
     }
 }
