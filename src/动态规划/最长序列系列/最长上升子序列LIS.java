@@ -1,4 +1,4 @@
-package 动态规划;
+package 动态规划.最长序列系列;
 
 public class 最长上升子序列LIS {
     public static void main(String[] args) {
