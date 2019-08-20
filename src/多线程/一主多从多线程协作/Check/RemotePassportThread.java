@@ -1,10 +1,10 @@
-package 多线程.辅助类CountDownLatch和CyclicBarrier和Semaphore.一主多从多线程协作.Check;/**
+package 多线程.一主多从多线程协作.Check;/**
  * @program: javatest
  * @author: zpc
  * @create: 2019-08-18 21:13
  **/
 
-import 多线程.辅助类CountDownLatch和CyclicBarrier和Semaphore.一主多从多线程协作.Service.RemotePassportService;
+import 多线程.一主多从多线程协作.Service.RemotePassportService;
 
 /**
  * @Author: zpc

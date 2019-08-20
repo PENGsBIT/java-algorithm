@@ -1,4 +1,4 @@
-package 多线程.辅助类CountDownLatch和CyclicBarrier和Semaphore.一主多从多线程协作.Service;/**
+package 多线程.一主多从多线程协作.Service;/**
  * @program: javatest
  * @author: zpc
  * @create: 2019-08-18 20:52

@@ -22,7 +22,7 @@ public class 冒泡排序 {
         for (int i = 0; i < len - 1; i++) {
             for (int j = 0; j < len - 1 - i; j++) {
                 if (nums[j] > nums[j+1]) {        // 相邻元素两两对比
-                    swap(nums, i, j);
+                    swap(nums, j+1, j);
                 }
             }
         }

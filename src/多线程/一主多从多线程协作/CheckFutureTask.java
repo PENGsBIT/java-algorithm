@@ -1,5 +1,5 @@
-package 多线程.辅助类CountDownLatch和CyclicBarrier和Semaphore.一主多从多线程协作;
-import 多线程.辅助类CountDownLatch和CyclicBarrier和Semaphore.一主多从多线程协作.Check.BaseCheckThread;
+package 多线程.一主多从多线程协作;
+import 多线程.一主多从多线程协作.Check.BaseCheckThread;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.FutureTask;
 

@@ -1,13 +1,13 @@
-package 多线程.辅助类CountDownLatch和CyclicBarrier和Semaphore.一主多从多线程协作;/**
+package 多线程.一主多从多线程协作;/**
  * @program: javatest
  * @author: zpc
  * @create: 2019-08-18 20:50
  **/
 
-import 多线程.辅助类CountDownLatch和CyclicBarrier和Semaphore.一主多从多线程协作.Check.RemoteBankThread;
-import 多线程.辅助类CountDownLatch和CyclicBarrier和Semaphore.一主多从多线程协作.Check.RemoteLoanThread;
-import 多线程.辅助类CountDownLatch和CyclicBarrier和Semaphore.一主多从多线程协作.Check.RemotePassportThread;
-import 多线程.辅助类CountDownLatch和CyclicBarrier和Semaphore.一主多从多线程协作.Thread.MyThreadFactory;
+import 多线程.一主多从多线程协作.Thread.MyThreadFactory;
+import 多线程.一主多从多线程协作.Check.RemoteBankThread;
+import 多线程.一主多从多线程协作.Check.RemoteLoanThread;
+import 多线程.一主多从多线程协作.Check.RemotePassportThread;
 
 import java.util.ArrayList;
 import java.util.List;
