@@ -11,8 +11,8 @@ public class 洗牌算法 {
         System.out.println("排序后的数组：");
         print(data);
         System.out.println("蓄水池抽样在o（n）时间内对n个数据进行等概率随机抽取");
-        Reservoir_Sampling(data, 3);
-        print(data);
+        print(Reservoir_Sampling(data, 3));
+
     }
 
     public static void swap(int[] data, int i, int j) {
