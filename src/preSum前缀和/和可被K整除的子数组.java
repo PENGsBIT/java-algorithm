@@ -1,4 +1,4 @@
-package preSum;
+package preSum前缀和;
 
 import java.util.HashMap;
 import java.util.Map;

@@ -1,4 +1,4 @@
-package preSum;
+package preSum前缀和;
 
 public class MaxSubSum2D {
     public static void main(String[] args) {
