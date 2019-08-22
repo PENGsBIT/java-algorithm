@@ -1,4 +1,4 @@
-package 数组;
+package 数组.数字和;
 
 import java.util.HashMap;
 
