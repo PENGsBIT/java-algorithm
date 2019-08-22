@@ -43,4 +43,85 @@ public class 两个有序数组的中位数或者第k小元素 {
         }
         return -1.0;
     }
+    public static void main(String[] args) {
+        //定义两个有序数组a,b
+        int[] a = new int[]{1,9,10,18};
+        int[] b = new int[]{7,10};
+
+        //查找两个数组的中位数
+        int mark = (a.length + b.length)%2;
+        int mid = (a.length + b.length)/2;
+        if(mark != 0){
+            System.out.println(Search(a,0,a.length-1,b,0,b.length-1,mid));
+        }else{
+            int p = Search(a,0,a.length-1,b,0,b.length-1,mid);
+            int q = Search(a,0,a.length-1,b,0,b.length-1,mid+1);
+            System.out.println((p+q)/2);
+        }
+
+        //查找两个数组的第k小元素
+        int k = 6;
+        System.out.println(Search(a,0,a.length-1,b,0,b.length-1,k));
+
+
+    }
+
+    public static int Search(int[] a,int startA,int endA,int[] b,int startB,int endB,int k){
+        if(k == 1){
+            if(a[startA] <= b[startB]){
+                return a[startA];
+            }else{
+                return b[startB];
+            }
+        }
+
+        //如果startA>endA,则说明A中的元素已经排除完，只剩下B中元素，此时只要取B中前k个元素就好
+        if(startA > endA){
+            return b[startB + k - 1];
+        }
+        //同上
+        if(startB > endB){
+            return a[startA + k -1];
+        }
+
+        int al = endA - startA + 1;
+        int bl = endB - startB + 1;
+
+        //如果a中元素个数大于b中元素个数，此时应该将a与b的位置交换，将元素少的数组放在前面，这是为了57行代码的判断
+        if(al > bl){
+            return Search(b,startB,endB,a,startA,endB,k);
+        }
+
+        int ms = 0;
+        int ns = 0;
+
+        //如果a中元素个数<k/2,此时应该取a中的所有元素,如果不做49的行的处理的话，可能会造成数组溢出
+        if((endA - startA + 1) < k/2){
+            ms = endA - startA + 1;
+        }else{
+            ms = k/2;
+        }
+
+        ns = k - ms ;
+
+        int m = ms-1 + startA;
+        int n = ns-1+ startB;
+
+//      System.out.println(m);
+//      System.out.println(n);
+
+        if(a[m] == b[n]){
+            return a[m];
+        }else if(a[m] > b[n]){
+            return Search(a,startA,m,b,n+1,endB,k-ns);
+        }else{
+            return Search(a,m+1,endA,b,startB,n,k-ms);
+        }
+
+
+    }
+
+
 }
+
+
