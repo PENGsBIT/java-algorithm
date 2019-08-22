@@ -6,7 +6,7 @@ package 转化;
 //
 //算法思想：由于原串包含的汉字种类较多，那么我们可以把该字符串转为数字字符串，然后数字字符串变为long型整数就简单多了。
 public class 中文字符串转为long型整数 {
-    public  long parseChineseNumber(String s){
+    public static long parseChineseNumber(String s){
         long  num = 0;
         StringBuilder  sb = new StringBuilder();
         for(int i = 0 ; i< s.length();i++){
@@ -24,15 +24,19 @@ public class 中文字符串转为long型整数 {
 
             }
         }
-        //System.out.println(sb+"****");
-        long  wei = 1;
-        for(int i = sb.length() -1;i>=0 ;i--){
-            num += (sb.charAt(i)-'0')*wei;
-            System.out.println("num = " + num);
-            wei = wei * 10;
-        }
+        System.out.println("****"+sb+"****");
+//        long  wei = 1;
+//        for(int i = sb.length() -1;i>=0 ;i--){
+//            num += (sb.charAt(i)-'0')*wei;
+//            System.out.println("num = " + num);
+//            wei = wei * 10;
+//        }
+        num=Long.valueOf(sb.toString());
         return  num ;
     }
 
+    public static void main(String[] args) {
+        System.out.println(parseChineseNumber("三千二百零一万九千七百六十五亿四千三百二十一万九千八百七十六"));
+    }
 
 }
