@@ -1,4 +1,4 @@
-package 动态规划.背包01及其变种;/**
+package 回溯;/**
  * @program: javatest
  * @author: zpc
  * @create: 2019-07-26 22:43
@@ -14,8 +14,8 @@ package 动态规划.背包01及其变种;/**
  **/
 
 
-public class 划分为k个相等的子集 {
-    public boolean canPartitionKSubsets(int[] nums, int k) {
+public class 寻找和相等的k个子集 {
+    public static boolean canPartitionKSubsets(int[] nums, int k) {
         int sum = 0;
         for(int num:nums)sum += num;
         if(k <= 0 || sum%k != 0)return false;
@@ -23,9 +23,11 @@ public class 划分为k个相等的子集 {
         return canPartition(nums, visited, 0, k, 0, 0, sum/k);
     }
 
-    public boolean canPartition(int[] nums, int[] visited, int start_index, int k, int cur_sum, int cur_num, int target){
+    public static boolean canPartition(int[] nums, int[] visited, int start_index, int k, int cur_sum, int cur_num, int target){
         if(k==1)return true;
-        if(cur_sum == target && cur_num>0)return canPartition(nums, visited, 0, k-1, 0, 0, target);
+        if (cur_sum == target && cur_num > 0) {
+            return canPartition(nums, visited, 0, k - 1, 0, 0, target);
+        }
         for(int i = start_index; i<nums.length; i++){
             if(visited[i] == 0){
                 visited[i] = 1;
@@ -34,5 +36,10 @@ public class 划分为k个相等的子集 {
             }
         }
         return false;
+    }
+
+    public static void main(String[] args) {
+        int[]nums={4, 3, 2, 3, 5, 2, 1};
+        System.out.println(canPartitionKSubsets(nums, 4));
     }
 }
