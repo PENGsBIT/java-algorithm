@@ -50,12 +50,13 @@ public class 最长上升子序列LIS {
     }
     //O(nlogn)
     public static int lengthOfLIS(int[] nums) {
+        //tails是一个在tails[k]存储长度为k+1的所有递增子序列的长的上升子序列的最末元素，若有多个长度为k的上升子序列，则记录最小的那个最末元素。
         int[] tails = new int[nums.length];
         int size = 0;
         for (int num : nums) {
             int i = 0, j = size;
             while (i != j) {
-                int m = (i + j) / 2;
+                int m = i+(j-i) / 2;
                 if (tails[m] < num)
                     i = m + 1;
                 else

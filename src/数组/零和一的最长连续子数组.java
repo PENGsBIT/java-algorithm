@@ -14,7 +14,6 @@ public class 零和一的最长连续子数组 {
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] == 0) nums[i] = -1;
         }
-
         Map<Integer, Integer> sumToIndex = new HashMap<>();
         sumToIndex.put(0, -1);
         int sum = 0, max = 0;
