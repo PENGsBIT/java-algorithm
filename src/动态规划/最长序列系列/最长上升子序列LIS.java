@@ -1,5 +1,7 @@
 package 动态规划.最长序列系列;
 
+import java.util.Arrays;
+
 public class 最长上升子序列LIS {
     public static void main(String[] args) {
         //2 1 5 3 6 4 8 9 7，可以看出来它的LIS长度为5
@@ -85,5 +87,18 @@ public class 最长上升子序列LIS {
             }
         }
         return curMaxSize;
+    }
+    public static int lengthOfLIS1(int[] nums) {
+        int[] dp = new int[nums.length];
+        int len = 0;
+
+        for(int x : nums) {
+            int i = Arrays.binarySearch(dp, 0, len, x);
+            if(i < 0) i = -(i + 1);
+            dp[i] = x;
+            if(i == len) len++;
+        }
+
+        return len;
     }
 }
