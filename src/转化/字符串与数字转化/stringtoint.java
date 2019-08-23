@@ -1,4 +1,4 @@
-package 转化;
+package 转化.字符串与数字转化;
 
 public class stringtoint {
     public static int myAtoi(String str) {
