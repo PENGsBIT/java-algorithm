@@ -1,11 +1,10 @@
-public class 并查集 {
+package 并查集;
 
-}
-class UnionFind {
+public class UnionFindDemo {
     private int[] parent;
     private int size;
 
-    public UnionFind(int size) {
+    public UnionFindDemo(int size) {
         this.size = size;
         parent = new int[size];
         for (int i = 0; i < size; i++) {
@@ -45,7 +44,7 @@ class UnionFind {
 
     public static void main(String[] args) {
         int n = 10;
-        UnionFind union = new UnionFind(n);
+        UnionFindDemo union = new UnionFindDemo(n);
         System.out.println("初始：");
         union.printArr();
 
