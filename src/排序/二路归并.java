@@ -11,7 +11,7 @@ public class 二路归并 {
     // 分治递归空间O(logn)，逐层合并时间复杂度O(n)
     private static void mergeSort(int[] A, int start, int end) {
         if (A == null || A.length == 0||start >= end) {
-            return;
+            throw new IllegalArgumentException();
         }
         int mid = start + (end - start) / 2;
         mergeSort(A, start, mid);
