@@ -49,23 +49,28 @@ import java.util.*;
 
 
 public class 单词拆分II {
-    public static List<String> wordBreak(String s, Set<String> wordDict) {
-        return DFS(s, wordDict, new HashMap<String, LinkedList<String>>());
+    //直接使用DFS会导致TLE，所以使用HashMap来保存之前的结果
+    // 来修剪重复的分支，如下所示:
+    static Set<String> wordDict;
+    public static List<String> wordBreak(String s, Set<String> Dict) {
+        wordDict=Dict;
+        return DFS(s,new HashMap<>());
     }
 
     // DFS function returns an array including all substrings derived from s.
-    static List<String> DFS(String s, Set<String> wordDict, HashMap<String, LinkedList<String>>map) {
-        if (map.containsKey(s))
+    static List<String> DFS(String s, Map<String, List<String>>map) {
+        if (map.containsKey(s)) {
             return map.get(s);
+        }
 
-        LinkedList<String>res = new LinkedList<String>();
+        List<String>res = new LinkedList<>();
         if (s.length() == 0) {
             res.add("");
             return res;
         }
         for (String word : wordDict) {
             if (s.startsWith(word)) {
-                List<String>sublist = DFS(s.substring(word.length()), wordDict, map);
+                List<String>sublist = DFS(s.substring(word.length()), map);
                 for (String sub : sublist)
                     res.add(word + (sub.isEmpty() ? "" : " ") + sub);
             }
