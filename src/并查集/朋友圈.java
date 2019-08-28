@@ -42,7 +42,7 @@ public class 朋友圈 {
     private static void unionFind (int[] root, int v1, int v2) {
         while (root[v1] != v1) v1 = root[v1]; //find v1's root
         while (root[v2] != v2) v2 = root[v2]; //find v2's root
-        if (root[v1] != root[v2]) root[v2] = v1; //unite the 2 subtrees
+        if (root[v1] != root[v2]) root[v1] = v2; //unite the 2 subtrees
     }
 
     public static void main(String[] args) {
