@@ -29,6 +29,11 @@ public class UnionFindDemo {
         if (firstRoot == secondRoot) {
             return;
         }
+        //for (int i = 0; i < size; i++) {
+        //            if(parent[i] == firstRoot){
+        //                parent[i] = secondRoot;
+        //            }
+        //        }
         parent[firstRoot] = secondRoot;
     }
 
