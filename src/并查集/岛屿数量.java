@@ -52,66 +52,85 @@ public class 岛屿数量 {
 
     // for the 4 direction visit.
     // unionFind
-    int[][] distance = {{1,0},{-1,0},{0,1},{0,-1}};
-    public int unionFindnumIslands(char[][] grid) {
-        if (grid == null || grid.length == 0 || grid[0].length == 0)  {
-            return 0;
-        }
-        UnionFind uf = new UnionFind(grid);
-        int rows = grid.length;
-        int cols = grid[0].length;
-        for (int i = 0; i < rows; i++) {
-            for (int j = 0; j < cols; j++) {
-                if (grid[i][j] == '1') {
-                    for (int[] d : distance) {
-                        int x = i + d[0];
-                        int y = j + d[1];
-                        if (x >= 0 && x < rows && y >= 0 && y < cols && grid[x][y] == '1') {
-                            int id1 = i*cols+j;
-                            int id2 = x*cols+y;
-                            uf.union(id1, id2);
-                        }
-                    }
+    public int UFNumIslands(char[][] grid) {
+        if(grid.length == 0 || grid[0].length == 0) return 0;
+        int m = grid.length, n = grid[0].length;
+        UF uf = new UF(m , n, grid);
+
+        for(int i = 0; i < m; i++) {
+            for(int j = 0; j < n; j++) {
+                if(grid[i][j] == '0') continue;
+                int p = i * n + j;
+                int q;
+                if(i > 0 && grid[i - 1][j] == '1') {
+                    q = p - n;
+                    uf.union(p, q);
+                }
+                if(i < m - 1 && grid[i + 1][j] == '1') {
+                    q = p + n;
+                    uf.union(p, q);
+                }
+                if(j > 0 && grid[i][j - 1] == '1') {
+                    q = p - 1;
+                    uf.union(p, q);
+                }
+                if(j < n - 1 && grid[i][j + 1] == '1') {
+                    q = p + 1;
+                    uf.union(p, q);
                 }
             }
         }
         return uf.count;
     }
-    class UnionFind {
-        int[] father;
-        int m, n;
-        int count = 0;
-        UnionFind(char[][] grid) {
-            m = grid.length;
-            n = grid[0].length;
-            father = new int[m*n];
-            for (int i = 0; i < m; i++) {
-                for (int j = 0; j < n; j++) {
-                    if (grid[i][j] == '1') {
-                        int id = i * n + j;
-                        father[id] = id;
-                        count++;
-                    }
+    class UF {
+
+        public int count = 0;
+        public int[] id = null;
+
+        public UF(int m, int n, char[][] grid) {
+            for(int i = 0; i < m; i++) {
+                for(int j = 0; j < n; j++) {
+                    if(grid[i][j] == '1') count++;
                 }
             }
-        }
-        public void union(int node1, int node2) {
-            int find1 = find(node1);
-            int find2 = find(node2);
-            if(find1 != find2) {
-                father[find1] = find2;
-                count--;
+            id = new int[m * n];
+            for(int i = 0; i < m * n; i++) {
+                id[i] = i;
             }
         }
-        public int find (int node) {
-            if (father[node] == node) {
-                return node;
+
+        public int find(int p) {
+            while(p != id[p]) {
+                id[p] = id[id[p]];
+                p = id[p];
             }
-            father[node] = find(father[node]);
-            return father[node];
+            return p;
+        }
+
+        public boolean isConnected(int p, int q) {
+            int pRoot = find(p);
+            int qRoot = find(q);
+            if(pRoot != qRoot) return false;
+            else return true;
+        }
+
+        public void union(int p, int q) {
+            int pRoot = find(p);
+            int qRoot = find(q);
+            if(pRoot == qRoot) return;
+            id[pRoot] = qRoot;
+            count--;
         }
     }
     public static void main(String[] args) {
-
+        char[][]lands=new char[][]{
+            { '1', '1', '1', '1', '0' },
+            { '1', '1', '0', '1', '0' },
+            { '1', '1', '0', '0', '0' },
+            { '0', '0', '0', '1', '0' }
+        };
+        System.out.println(numIslands(lands));
+        岛屿数量 t = new 岛屿数量();
+        System.out.println(t.UFNumIslands(lands));
     }
 }
