@@ -25,26 +25,43 @@ package 并查集;
 //
 
 public class 朋友圈 {
+    static private int[] root;
     //并查集
     public static int findCircleNum(int[][] M) {
         int m = M.length, cnt = 0;
-        int[] root = new int[m];
+        root = new int[m];
+        //初始化并查集
         for (int i = 0; i < m; i++) root[i] = i;
+        //合并
         for (int i = 0; i < m; i++)
             for (int j = i + 1; j < m; j++)
-                if (M[i][j] == 1) unionFind(root, i, j);
+                if (M[i][j] == 1) {
+                    union(i, j);
+                }
 
-        for (int i = 0; i < m; i++)
+        for (int i = 0; i < m; i++){
             if (i == root[i]) cnt++;
+        }
+
         return cnt;
     }
 
-    private static void unionFind (int[] root, int v1, int v2) {
-        while (root[v1] != v1) v1 = root[v1]; //find v1's root
-        while (root[v2] != v2) v2 = root[v2]; //find v2's root
-        if (root[v1] != root[v2]) root[v1] = v2; //unite the 2 subtrees
+    private static void union(int v1, int v2) {
+        int v1Root = find(v1);//find v1's root
+        int v2qRoot = find(v2); //find v2's root
+        if (root[v1] != root[v2]) {
+            root[v1] = v2; //unite the 2 subtrees
+        }
     }
+    public static int find(int cur){
+        while(cur != root[cur]){
+            //在查找的过程中压缩路径,减少查找的次数
+            root[cur] = root[root[cur]];
+            cur = root[cur];
+        }
 
+        return cur;
+    }
     public static void main(String[] args) {
         int[][] M={
             {1,1,0},
