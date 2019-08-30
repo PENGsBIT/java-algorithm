@@ -1,4 +1,4 @@
-package 数组;
+package 栈;
 
 //456. 132模式
 //给定一个整数序列：a1, a2, ..., an，一个132模式的子序列 ai, aj, ak 被定义为：当 i < j < k 时，ai < ak < aj。设计一个算法，当给定有 n 个数字的序列时，验证这个序列中是否含有132模式的子序列。
@@ -41,9 +41,6 @@ public class 模式132 {
             if (nums[i] < third) return true;
             //nums[i] > st.peek()找到递减的区间段，使得j>k,a[j]>a[k],也就是找到a[j]和third
             while (!st.empty() && nums[i] > st.peek()) {
-                //stack.peek大于当前的third（当前a[j]、a[k]对就是numi和third)。
-                // 那么现在遇到一个numi比stack.peek大，那么就构成新的a[j]、a[k]对
-                // （因为对于一个a[j]总是比较a[j]左边的最小值和a[j]右边的最大值，那么总是期待third尽可能的大）
                 third = st.peek();
                 st.pop();
             }
