@@ -1,4 +1,4 @@
-package 树;
+package AAA真题系列AAA.微软;
 
 //leetcode 110. 平衡二叉树
 //给定一个二叉树，判断它是否是高度平衡的二叉树。
@@ -31,6 +31,8 @@ package 树;
 // 4   4
 //返回 false 。
 //
+
+import 树.TreeNode;
 
 public class 判断平衡二叉树 {
     //O(nlongn)双递归 n节点logn高度

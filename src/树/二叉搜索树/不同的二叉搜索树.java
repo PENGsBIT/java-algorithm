@@ -25,7 +25,7 @@ public class 不同的二叉搜索树 {
     }
 
     public static void main(String[] args) {
-        System.out.println(numTrees(2));
+        System.out.println(numTrees(7));
 
     }
 }
