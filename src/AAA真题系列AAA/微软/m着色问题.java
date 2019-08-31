@@ -22,7 +22,6 @@ public class m着色问题 {
                 {0, 1, 0, 1, 0}
         };
         //图的邻接矩阵
-
         traceback(0, matrix);
         System.out.println(count);
     }
