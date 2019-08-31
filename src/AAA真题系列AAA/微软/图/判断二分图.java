@@ -1,4 +1,4 @@
-package AAA真题系列AAA.微软;
+package AAA真题系列AAA.微软.图;
 
 /**
  * @program: javatest
