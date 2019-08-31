@@ -1,4 +1,4 @@
-package AAA真题系列AAA.微软;
+package AAA真题系列AAA.微软.树;
 
 //leetcode 110. 平衡二叉树
 //给定一个二叉树，判断它是否是高度平衡的二叉树。
