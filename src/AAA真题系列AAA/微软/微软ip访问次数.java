@@ -1,4 +1,4 @@
-package AAA真题系列AAA;
+package AAA真题系列AAA.微软;
 
 import java.util.HashMap;
 import java.util.LinkedList;
