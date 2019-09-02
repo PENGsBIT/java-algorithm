@@ -1,4 +1,5 @@
-package AAA真题系列AAA.微软.树;/**
+package AAA真题系列AAA.微软.树;
+/**
  * @program: javatest
  * @author: zpc
  * @create: 2019-08-31 22:25
@@ -28,7 +29,7 @@ public class 二叉搜索树的查询和插入与删除操作 {
             return target<root.val? searchBST(root.left,target):searchBST(root.right,target);
         }
     }
-    public TreeNode insertIntoBST(TreeNode root, int val) {
+    public static TreeNode insertIntoBST(TreeNode root, int val) {
         if (root == null) {
             return new TreeNode(val);
         }
@@ -46,7 +47,7 @@ public class 二叉搜索树的查询和插入与删除操作 {
 //    node only has left subtree- return the left subtree
 //    node only has right subtree- return the right subtree
 //    node has both left and right - find the minimum value in the right subtree, set that value to the currently found node, then recursively delete the minimum value in the right subtree
-    public TreeNode deleteNode(TreeNode root, int key) {
+    public static TreeNode deleteNode(TreeNode root, int key) {
         if(root == null){
             return null;
         }
@@ -67,10 +68,21 @@ public class 二叉搜索树的查询和插入与删除操作 {
         return root;
     }
 
-    private TreeNode findMin(TreeNode node){
+    private static TreeNode findMin(TreeNode node){
         while(node.left != null){
             node = node.left;
         }
         return node;
+    }
+
+    public static void main(String[] args) {
+        TreeNode root=new TreeNode(6);
+        root.left=new TreeNode(2);
+        root.right=new TreeNode(8);
+        root.left.left=new TreeNode(1);
+        root.left.right=new TreeNode(4);
+        root.left.right.left=new TreeNode(3);
+        root.left.right.right=new TreeNode(5);
+        System.out.println(deleteNode(root,2));
     }
 }
