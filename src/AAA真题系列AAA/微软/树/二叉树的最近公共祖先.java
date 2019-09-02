@@ -21,34 +21,26 @@ package AAA真题系列AAA.微软.树;
 //输出: 5
 //解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。
 //
+
 import 树.TreeNode;
 
 public class 二叉树的最近公共祖先 {
     public static void main(String[] args) {
-        TreeNode root=new TreeNode(1);
-        root.left=new TreeNode(2);
-        root.right=new TreeNode(3);
-        root.left.left=new TreeNode(4);
-        int p=4;
-        int q=3;
-        System.out.println(lowestCommonAncestor(root,p,q).val);
+        TreeNode root = new TreeNode(1);
+        root.left = new TreeNode(2);
+        root.right = new TreeNode(3);
+        root.left.left = new TreeNode(4);
+        int p = 4;
+        int q = 3;
+        System.out.println(lowestCommonAncestor(root, p, q).val);
     }
+
     public static TreeNode lowestCommonAncestor(TreeNode root, int p, int q) {
-        if (root == null) {
-            return null;
-        }
-        if (root.val == p || root.val == q) {
+        if (root == null || root.val == p || root.val == q) {
             return root;
         }
         TreeNode left = lowestCommonAncestor(root.left, p, q);
         TreeNode right = lowestCommonAncestor(root.right, p, q);
-        if (left != null && right != null) {
-            return root;
-        } else if (left != null) {
-            return left;
-        } else if (right != null) {
-            return right;
-        }
-        return null;
+        return left == null ? right : right == null ? left : root;
     }
 }
