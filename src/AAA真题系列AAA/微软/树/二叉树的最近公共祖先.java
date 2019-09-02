@@ -1,4 +1,4 @@
-package 树;
+package AAA真题系列AAA.微软.树;
 //leetcode236. 二叉树的最近公共祖先
 //给定一个二叉树, 找到该树中两个指定节点的最近公共祖先。
 //
@@ -21,6 +21,7 @@ package 树;
 //输出: 5
 //解释: 节点 5 和节点 4 的最近公共祖先是节点 5。因为根据定义最近公共祖先节点可以为节点本身。
 //
+import 树.TreeNode;
 
 public class 二叉树的最近公共祖先 {
     public static void main(String[] args) {
