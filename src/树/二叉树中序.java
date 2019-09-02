@@ -18,11 +18,11 @@ public class 二叉树中序 {
                 treeNodeStack.push(node);
                 node = node.left;
             }
-            if (!treeNodeStack.isEmpty()) {
+//            if (!treeNodeStack.isEmpty()) {
                 node = treeNodeStack.pop();
                 System.out.print(node.val + " ");
                 node = node.right;
-            }
+            //}
         }
     }
 }

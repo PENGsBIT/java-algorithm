@@ -13,7 +13,7 @@ public class 二叉搜索树的后序遍历序列 {
             return true;
         int rootVal = sequence[last];
         int cutIndex = first;
-        while (cutIndex < last && sequence[cutIndex] <= rootVal)
+        while (cutIndex < last && sequence[cutIndex] < rootVal)
             cutIndex++;
         for (int i = cutIndex; i < last; i++)
             if (sequence[i] < rootVal)
