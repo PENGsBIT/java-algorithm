@@ -31,7 +31,11 @@ package 数组;/**
 
 public class 预测赢家 {
     //DP
-    //dp[i][j]表示从nums[i]到nums[j]先手比另一位玩家多的最大分数，最后返回dp[0][nums.length-1]是否大于0即可
+    //问题转换为两个选手所拿元素的差值
+    // dp[i][j]表示从nums[i]到nums[j]先手玩家1能够获得的分数减去玩家2能够获得的最大分数差，
+    // 最后看dp[0][len-1]的正负来判断1是否能赢。
+    // 比另一位玩家多的最大分数，最后返回dp[0][nums.length-1]是否大于0即可
+    //玩家1能够拿nums[i]或者nums[j]， 剩下一个新的数组nums[i+1, j]或者nums[i, j-1]，然后轮到玩家2拿.
     //对于dp[i][j]，如果先手拿了nums[i]，则另一位玩家比先手多dp[i+1][j]，dp[i][j] = nums[i]-dp[i+1][j]，
     // 如果先手拿了nums[j]，则另一位玩家比先手多dp[i][j-1]，dp[i][j] = nums[j]-dp[i][j-1]
     //综上，dp[i][j] = Math.max(nums[i]-dp[i+1][j],nums[j]-dp[i][j-1])

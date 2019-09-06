@@ -30,6 +30,6 @@ public class 找零钱的最少硬币数 {
     }
 
     public static void main(String[] args) {
-        System.out.println(coinChange(new int[]{3,1,4},2));
+        System.out.println(coinChange(new int[]{2,3},100));
     }
 }
