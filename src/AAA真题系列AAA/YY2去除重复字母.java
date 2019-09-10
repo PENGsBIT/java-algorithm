@@ -33,6 +33,9 @@ public class YY2去除重复字母 {
     //从s中删除所有s [i]。
     //运行时为O（26 * n）= O（n）。
     public static String removeDuplicateLetters(String s) {
+        if (s.length() == 0) {
+            return "";
+        }
         int[] cnt = new int[26];
         int pos = 0; // the position for the smallest s[i]
         for (int i = 0; i < s.length(); i++) cnt[s.charAt(i) - 'a']++;
@@ -40,7 +43,7 @@ public class YY2去除重复字母 {
             if (s.charAt(i) < s.charAt(pos)) pos = i;
             if (--cnt[s.charAt(i) - 'a'] == 0) break;
         }
-        return s.length() == 0 ? "" : s.charAt(pos) + removeDuplicateLetters(s.substring(pos + 1).replaceAll("" + s.charAt(pos), ""));
+        return  s.charAt(pos) + removeDuplicateLetters(s.substring(pos + 1).replaceAll("" + s.charAt(pos), ""));
     }
     //1. 扫描字符串，结果串置空；
     //2. 如果当前字符用过了，扫描下一个；
@@ -90,6 +93,7 @@ public class YY2去除重复字母 {
     }
 
     public static void main(String[] args) {
+        System.out.println(removeDuplicateLetters("abcacb"));
         System.out.println(stackRemoveDuplicateLetters("acbcabc"));
     }
 }
