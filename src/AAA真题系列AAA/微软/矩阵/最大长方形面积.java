@@ -1,7 +1,8 @@
-package 单调栈;
+package AAA真题系列AAA.微软.矩阵;
 
 import java.util.Arrays;
 import java.util.Stack;
+
 //leetcode 84. 柱状图中最大的矩形
 //给定 n 个非负整数，用来表示柱状图中各个柱子的高度。每个柱子彼此相邻，且宽度为 1 。
 //

@@ -1,4 +1,4 @@
-/**
+package AAA真题系列AAA; /**
  * @program: javatest
  * @author: zpc
  * @create: 2019-09-08 15:41
@@ -19,7 +19,6 @@
 
 
 public class 爱奇艺1 {
-    //DP(O^2)
     //dp[i][j]表示前i + 1位可能排列的个数，
     //其中i + 1位是j + 1在其余的数中最小的。
     //我以S = "DID"为例。
