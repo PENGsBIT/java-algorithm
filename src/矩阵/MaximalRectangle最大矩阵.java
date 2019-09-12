@@ -1,6 +1,7 @@
 package 矩阵;
 
 import java.util.Stack;
+
 //leetcode 85. 最大矩形
 //给定一个仅包含 0 和 1 的二维二进制矩阵，找出只包含 1 的最大矩形，并返回其面积。
 //
@@ -15,6 +16,7 @@ import java.util.Stack;
 //]
 //输出: 6
 //
+//在一个由 0 和 1 组成的二维矩阵内，找到只包含 1 的最大正方形，并返回其面积。
 public class MaximalRectangle最大矩阵 {
     public static void main(String[] args) {
         char[][] a = {
