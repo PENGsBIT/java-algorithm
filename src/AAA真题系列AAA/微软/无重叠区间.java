@@ -1,4 +1,4 @@
-package 贪心;
+package AAA真题系列AAA.微软;
 
 import java.util.Arrays;
 //leetcode 435. 无重叠区间
@@ -31,23 +31,17 @@ import java.util.Arrays;
 //解释: 你不需要移除任何区间，因为它们已经是无重叠的了。
 //
 public class 无重叠区间 {
-    public static void main(String[] args) {
-        Interval[] intervals = new Interval[4];
-        intervals[0] = new Interval(1,3);
-        intervals[1] = new Interval(3,22);
-        intervals[2] = new Interval(1,2);
-        intervals[3] = new Interval(2,3);
-//        intervals[0] = new Interval(1,12);
-//        intervals[1] = new Interval(12,13);
-        System.out.println(eraseOverlapIntervals(intervals));
-    }
 
+        //贪心策略应该是每次选取结束时间最早的活动。
+        // 直观上也很好理解，按这种方法选择相容活动为未安排活动留下尽可能多的时间。
+        // 这也是把各项活动按照结束时间单调递增排序的原因
     public static int eraseOverlapIntervals(Interval[] intervals) {
         if (intervals == null || intervals.length == 0)
             return 0;
-        Arrays.sort(intervals, ((o1, o2) -> o1.end==o2.end?o2.start.compareTo(o1.start):o1.end.compareTo(o2.end)));
+        Arrays.sort(intervals, ((o1, o2) -> o1.end==o2.end?o2.start-o1.start:o1.end-o2.end));
         int res = 1;
         int pre = 0;
+        //找出非重叠区间的最大数目
         for (int i = 1; i < intervals.length; i++) {
             if (intervals[i].start >= intervals[pre].end) {
                 res++;
@@ -56,10 +50,23 @@ public class 无重叠区间 {
         }
         return intervals.length - res;
     }
+
+    public static void main(String[] args) {
+        Interval[] intervals = new Interval[4];
+        intervals[0] = new Interval(1,3);
+        intervals[1] = new Interval(3,22);
+        intervals[2] = new Interval(1,2);
+        intervals[3] = new Interval(2,3);
+//        Interval[] intervals = new Interval[2];
+//        intervals[0] = new Interval(1,12);
+//        intervals[1] = new Interval(12,13);
+        System.out.println(eraseOverlapIntervals(intervals));
+    }
 }
+
 class Interval {
-    Integer start;
-    Integer end;
+    int start;
+    int end;
 
 
     Interval(int s, int e) {

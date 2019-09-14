@@ -40,7 +40,7 @@ public class 合并K个排序链表 {
         if (l1 == null) return l2;
         if (l2 == null) return l1;
 
-        ListNode head = null;
+        ListNode head;
         if (l1.val <= l2.val){
             head = l1;
             head.next = mergeTwoLists(l1.next, l2);
