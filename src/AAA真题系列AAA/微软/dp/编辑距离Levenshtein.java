@@ -1,13 +1,36 @@
 package AAA真题系列AAA.微软.dp;
 
-public class 编辑距离Levenshtein {
+//leetcode 72. 编辑距离
+//给定两个单词 word1 和 word2，计算出将 word1 转换成 word2 所使用的最少操作数 。
+//
+//你可以对一个单词进行如下三种操作：
+//
+//插入一个字符
+//删除一个字符
+//替换一个字符
+//示例 1:
+//
+//输入: word1 = "horse", word2 = "ros"
+//输出: 3
+//解释:
+//horse -> rorse (将 'h' 替换为 'r')
+//rorse -> rose (删除 'r')
+//rose -> ros (删除 'e')
+//示例 2:
+//
+//输入: word1 = "intention", word2 = "execution"
+//输出: 5
+//解释:
+//intention -> inention (删除 't')
+//inention -> enention (将 'i' 替换为 'e')
+//enention -> exention (将 'n' 替换为 'x')
+//exention -> exection (将 'n' 替换为 'c')
+//exection -> execution (插入 'u')
+//
 
-    public static void main(String[] args) {
-        String s1 = "abc";
-        String s2 = "abdddd";
-        int editDistance = levenshtein(s1, s2);
-        System.out.println("s1=" + s1 + "与s2=" + s2 + "的编辑距离为：" + editDistance);
-    }
+import java.util.Arrays;
+
+public class 编辑距离Levenshtein {
 
     /**
      * 编辑距离求解
@@ -69,6 +92,55 @@ public class 编辑距离Levenshtein {
         }
         return solutionMatrix[m][n];
     }
-
-
+    //o(n)Note that each time when we update dp[i][j], we only need dp[i - 1][j - 1], dp[i][j - 1] and dp[i - 1][j].
+    // We may optimize the space of the code to use only two vectors.
+    public static int minDistance(String word1, String word2) {
+        int m = word1.length(), n = word2.length();
+        int[] pre = new int[n + 1];
+        int[] cur = new int[n + 1];
+        for (int j = 1; j <= n; j++) {
+            pre[j] = j;
+        }
+        for (int i = 1; i <= m; i++) {
+            cur[0] = i;
+            for (int j = 1; j <= n; j++) {
+                if (word1.charAt(i-1) == word2.charAt(j-1)) {
+                    cur[j] = pre[j - 1];
+                } else {
+                    cur[j] = Math.min(pre[j - 1], Math.min( pre[j],cur[j - 1])) + 1;
+                }
+            }
+            Arrays.fill(pre, 0);
+            int[] temp = pre;
+            pre = cur;
+            cur = temp;
+        }
+        return pre[n];
+    }
+    public static int minDistanceOneArray(String word1, String word2) {
+        int opt[] = new int[word2.length()+1];
+        // base case
+        for(int j = 0;j <= word2.length();j++) opt[j] = j;
+        // iteration
+        for(int i = 1;i <= word1.length();i++){
+            int pre = i, corner = i-1;
+            for(int j = 1;j <= word2.length();j++){
+                int temp = corner;
+                corner = opt[j];
+                temp += (word1.charAt(i-1)==word2.charAt(j-1)?0:1);
+                opt[j] = Math.min(temp,Math.min(opt[j],pre)+1);
+                pre = opt[j];
+            }
+            opt[word2.length()] = pre;
+        }
+        return opt[word2.length()];
+    }
+    public static void main(String[] args) {
+        String s1 = "abc";
+        String s2 = "abdddd";
+        int editDistance = levenshtein(s1, s2);
+        System.out.println("s1=" + s1 + "与s2=" + s2 + "的编辑距离为：" + editDistance);
+        System.out.println(minDistance(s1,s2));
+        System.out.println(minDistanceOneArray(s1,s2));
+    }
 }
