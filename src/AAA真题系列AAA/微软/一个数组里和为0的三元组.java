@@ -20,6 +20,7 @@ import java.util.List;
 import java.util.Set;
 
 public class 一个数组里和为0的三元组 {
+    //Concise O(N^2) Java solution
     public static Set<List<Integer>> threeSum(int[] num) {
         Arrays.sort(num);
         Set<List<Integer>> res = new HashSet<>();

@@ -55,7 +55,7 @@ public class 整数数组中两两之差绝对值最小的值 {
     }
 
     public static void main(String[] args) {
-        int[] A = new int[] { 2, 1, -4,1};
+        int[] A = new int[] { 2, 1, -4,-2,-3,5};
         System.out.println(minAbs(A));
     }
 }
