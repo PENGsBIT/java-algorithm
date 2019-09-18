@@ -1,4 +1,4 @@
-package 数组;
+package AAA真题系列AAA.微软;
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -30,7 +30,7 @@ public class 数组中出现次数超过一半的数字 {
         for (int val : nums)
             if (val == majority)
                 cnt++;
-        return cnt > nums.length / 2 ? majority : -1;
+        return cnt > nums.length / 2 ? majority : 0;
 
     }
 
