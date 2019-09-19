@@ -109,7 +109,7 @@ public class 最长回文字串 {
             dp[i]=true;
             for(int j = 0; j < i; ++j){
                 //检测上个i结束的是不是回文，加上这次的char
-                dp[j] = dp[j + 1]  && s.charAt(j) == s.charAt(i) ? true : false;
+                dp[j] = dp[j + 1] && s.charAt(j) == s.charAt(i);
                 if(dp[j]  && (i - j) > (endIndex - startIndex)){
                     endIndex = i;
                     startIndex = j;

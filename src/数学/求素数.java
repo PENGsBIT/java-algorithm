@@ -19,7 +19,7 @@ public class 求素数 {
     }
 
     public static List<Integer> findPrime1(int n) {
-        List<Integer> primes = new ArrayList<Integer>();
+        List<Integer> primes = new ArrayList<>();
         primes.add(2);
         for(int i = 3; i <= n; i++) {
             for(int j = 2; j < i; j++) {
