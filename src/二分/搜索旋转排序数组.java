@@ -14,12 +14,7 @@ import java.util.Arrays;
 //你的算法时间复杂度必须是 O(log n) 级别。
 
 public class 搜索旋转排序数组 {
-    public static void main(String[] args) {
-        int[] nums = new int[]{4, 5, 6, 7, 0, 1, 2};
-        int target = 1;
-        System.out.println(searchRotated(nums, target));
-        System.out.println(search(nums,target));
-    }
+
     public static int search(int[] nums, int target) {
         int start = 0;
         int end = nums.length - 1;
@@ -72,5 +67,11 @@ public class 搜索旋转排序数组 {
                 return mid; // key found
         }
         return -(low + 1);  // key not found.
+    }
+    public static void main(String[] args) {
+        int[] nums = new int[]{4, 5, 6, 7, 0, 1, 2};
+        int target = 1;
+        System.out.println(searchRotated(nums, target));
+        System.out.println(search(nums,target));
     }
 }

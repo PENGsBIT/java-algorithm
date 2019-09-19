@@ -5,7 +5,7 @@ package 二分;
  * @author: zpc
  * @create: 2019-07-07 22:14
  **/
-
+//leetcode 34. 在排序数组中查找元素的第一个和最后一个位置
 public class 在排序数组中查找元素的第一个和最后一个位置 {
 
     public int[] searchRange(int[] A, int target) {
