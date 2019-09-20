@@ -7,7 +7,6 @@ public class 多路归并 {
      * 解法1：逐个合并数组，时间复杂度O(n*k)，n >> k
      * 合并k个排序（升序）数组
      * http://www.lintcode.com/zh-cn/problem/merge-k-sorted-arrays/
-     * @author yzwall
      */
     class Solution {
         public List<Integer> mergekSortedArrays(int[][] arrays) {
