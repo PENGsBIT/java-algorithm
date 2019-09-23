@@ -17,7 +17,7 @@ import java.util.*;
  **/
 
 
-public class 字符串转化 {
+public class 单词接龙block版 {
 
         private static String source = "ABC";
         private static String target = "ACD";
