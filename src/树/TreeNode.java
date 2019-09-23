@@ -14,8 +14,8 @@ public class TreeNode {
     public String toString() {
         return "{" +
             "val=" + val +
-            ", left=" + left +
-            ", right=" + right +
+            ", left->" + left +
+            ", right->" + right +
             '}';
     }
 }

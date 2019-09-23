@@ -11,7 +11,7 @@ import java.util.List;
 
 public class 所有子集 {
     public static void main(String[] args) {
-        System.out.println(subsets(new int[]{1,2,3}));;
+        System.out.println(subsets(new int[]{1,2,3}));
     }
     //对于子集来说，每个元素只有2种状态：在子集中，不在子集中
     //这刚好符合2进制，可以考虑使用bitmap的方法。
@@ -46,5 +46,26 @@ public class 所有子集 {
         }
         return mylist;
     }
-
+    //For example, {1,2,3} intially we have an emtpy set as result [ [ ] ]
+    //Considering 1, if not use it, still [ ], if use 1, add it to [ ], so we have [1] now
+    //Combine them, now we have [ [ ], [1] ] as all possible subset
+    //
+    //Next considering 2, if not use it, we still have [ [ ], [1] ], if use 2, just add 2 to each previous subset, we have [2], [1,2]
+    //Combine them, now we have [ [ ], [1], [2], [1,2] ]
+    //
+    //Next considering 3, if not use it, we still have [ [ ], [1], [2], [1,2] ], if use 3, just add 3 to each previous subset, we have [ [3], [1,3], [2,3], [1,2,3] ]
+    //Combine them, now we have [ [ ], [1], [2], [1,2], [3], [1,3], [2,3], [1,2,3] ]
+    public static List<List<Integer>> addSubsets(int[] nums) {
+        List<List<Integer>> result = new ArrayList<>();
+        result.add(new ArrayList<>());
+        for(int n : nums){
+            int size = result.size();
+            for(int i=0; i<size; i++){
+                List<Integer> subset = new ArrayList<>(result.get(i));
+                subset.add(n);
+                result.add(subset);
+            }
+        }
+        return result;
+    }
 }

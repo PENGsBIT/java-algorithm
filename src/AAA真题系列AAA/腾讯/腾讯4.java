@@ -1,15 +1,4 @@
-package AAA真题系列AAA.腾讯;/**
- * @program: javatest
- * @author: zpc
- * @create: 2019-09-20 22:06
- * @Author: zpc
- * @Description:
- * @Create: 2019-09-20 22:06
- * @Author: zpc
- * @Description:
- * @Create: 2019-09-20 22:06
- **/
-
+package AAA真题系列AAA.腾讯;
 /**
  * @Author: zpc
  * @Description:
