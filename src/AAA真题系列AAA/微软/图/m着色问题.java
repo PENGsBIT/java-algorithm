@@ -34,7 +34,7 @@ public class m着色问题 {
             // 填充颜色
             for (int i = 1; i <= m; i++) {
                 colors[curNode] = i;
-                if (OK(curNode, matrix)) {
+                if (canColor(curNode, matrix)) {
                     traceback(curNode + 1, matrix);
                 }
                 colors[curNode] = 0;
@@ -42,7 +42,7 @@ public class m着色问题 {
         }
     }
 
-    private static Boolean OK(int cur, int[][] matrix) {
+    private static Boolean canColor(int cur, int[][] matrix) {
         for (int j = 0; j < n; j++) {
             //判断当前位置的颜色是否和相邻位置颜色重复
             if (matrix[cur][j] == 1 && colors[cur] == colors[j])
