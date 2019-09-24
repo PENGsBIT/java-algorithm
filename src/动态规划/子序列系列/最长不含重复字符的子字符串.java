@@ -1,4 +1,4 @@
-package 动态规划.最长序列系列;
+package 动态规划.子序列系列;
 
 import java.util.Arrays;
 

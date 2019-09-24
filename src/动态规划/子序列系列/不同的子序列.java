@@ -1,4 +1,4 @@
-package 动态规划.最长序列系列;/**
+package 动态规划.子序列系列;/**
  * @program: javatest
  * @author: zpc
  * @create: 2019-09-23 16:40

@@ -1,4 +1,4 @@
-package 动态规划.最长序列系列;
+package 动态规划.子序列系列;
 
 public class 最长公共子序列LCS {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package 动态规划.最长序列系列;
+package 动态规划.子序列系列;
 
 public class 无重复字符的最长子串 {
     public int lengthOfLongestSubstring(String s) {

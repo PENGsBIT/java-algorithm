@@ -1,4 +1,4 @@
-package 动态规划.最长序列系列;
+package 动态规划.子序列系列;
 
 public class 最长重复子数组 {
     //以数组A为X轴，数组B为Y轴建立一个大小为A.length*B.length大小的二维矩阵。
