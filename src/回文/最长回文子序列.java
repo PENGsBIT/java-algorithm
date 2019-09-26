@@ -46,6 +46,6 @@ public class 最长回文子序列 {
     }
 
     public static void main(String[] args) {
-        System.out.println(longestPalindromeSubseq("abb"));
+        System.out.println(longestPalindromeSubseq("bbbab"));
     }
 }

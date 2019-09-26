@@ -30,7 +30,7 @@ public class 蓄水池抽样n个选k {
     //在n不同的数中取m个数
     public static int[] Reservoir_Sampling(int[] data, int k) {
         if (data == null||data.length < k) {
-            return new int[0];//In <Effective Java>,it advises to return int[0] instead of null.Am i doing right in this case?
+            return new int[0];//In <Effective Java>,it advises to return int[0] instead of null.
         }
         int[] sample = new int[k];
         int n = data.length;

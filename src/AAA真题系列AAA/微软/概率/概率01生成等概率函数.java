@@ -8,7 +8,8 @@ import java.util.Random;
 
 /**
  * @Author: zpc
- * @Description:已知：
+ * @Description:
+ * 已知：
  * 有一个随机函数 rand_0_and_1_with_p(), 这个随机数生成器，它能够以概率 p 产生0，以概率 (1 - p) 产生1。
  * 要求：使用这个随机函数，设计一个新的随机函数要求以等概率生成0和1。
  * @Create: 2019-09-14 22:41

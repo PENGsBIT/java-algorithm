@@ -45,7 +45,7 @@ public class MaximalRectangle最大矩阵 {
     private static int largestRectangle(int[] height) {
         int i = 0, res = 0;
         height[height.length - 1] = 0;
-        Stack<Integer> s = new Stack<Integer>();
+        Stack<Integer> s = new Stack<>();
         while (i < height.length) {
             if (s.isEmpty() || height[i] >= height[s.peek()])
                 s.push(i++);
