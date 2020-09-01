@@ -1,6 +1,5 @@
 package 贪心;
 
-import com.sun.istack.internal.NotNull;
 
 import java.util.ArrayList;
 import java.util.Collections;
