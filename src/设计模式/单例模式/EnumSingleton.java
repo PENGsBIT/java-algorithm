@@ -9,6 +9,9 @@ package 设计模式.单例模式;
 //构造器.那么枚举可以防止这种创建第二个实例的情况发生.
 //反射在通过newInstance创建对象时，会检查该类**是否ENUM修饰**，如果是则抛出异常，反射失败
 public enum EnumSingleton {
+    //反编译后代码,public final class T extends Enum,该类是继承了Enum类的，同时final关键字告诉我们，这个类也是不能被继承的。
+    //enum属于懒加载，Java类的加载和初始化过程都是线程安全,创建一个enum类型是线程安全的
+    //枚举类型是线程安全的，并且只会装载一次
     INSTANCE;
 
     public EnumSingleton getInstance() {

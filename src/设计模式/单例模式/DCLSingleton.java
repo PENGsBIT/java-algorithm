@@ -2,7 +2,8 @@ package 设计模式.单例模式;
 
 //double checked locking模式
 public class DCLSingleton {
-
+    //可能会出现空指针问题，出现问题的原因是JVM在实例化对象的时候会进行优化和指令重排序操作。当某个线程获取锁进行实例化时，其他线程就直接获取实例使用，
+    // 由于JVM指令重排序的原因，其他线程获取的对象也许不是一个完整的对象，所以在使用实例的时候就会出现空指针异常问题。
     private volatile static DCLSingleton DCLSingleton;//将 instance 变量声明成 volatile 保证JVM 的即时编译器中不会指令重排序的优化
 
     private DCLSingleton() {};
@@ -27,7 +28,7 @@ public class DCLSingleton {
 }
 //对双重检查锁定的升级版本
 class DCLOptimizeSingleton {
-
+    //volatile关键字严格遵循happens-before原则，即在读操作前，写操作必须全部完成。
     private static volatile DCLOptimizeSingleton instance = null;
 
     private DCLOptimizeSingleton() {}
